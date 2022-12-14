@@ -238,7 +238,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.xr.picoxr": {
-      "version": "file:C:/Users/Donat/Documents/GitHub/Y2B2-Unity-Development/PICO Unity Integration SDK v212",
+      "version": "file:D:/Y2B2Game/Y2B2-Unity-Development/PICO Unity Integration SDK v212",
       "depth": 0,
       "source": "local",
       "dependencies": {
