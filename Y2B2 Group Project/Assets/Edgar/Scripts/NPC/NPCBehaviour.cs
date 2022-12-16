@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NPCDialogue : MonoBehaviour
+public class NPCBehaviour : MonoBehaviour
 {
     public Canvas CanvasNPC;
     [SerializeField] private AudioSource AudioSourceNPC;
