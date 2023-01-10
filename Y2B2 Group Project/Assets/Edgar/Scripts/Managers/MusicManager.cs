@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class MusicManager : GameManager
+public class MusicManager : MonoBehaviour
 {
     [Serializable]
     public struct KeyValuePair
@@ -23,17 +23,17 @@ public class MusicManager : GameManager
     //Initialize Dictionaries
     private void Awake()
     {
-        foreach (KeyValuePair SMD in soundList)
+        foreach (KeyValuePair KVP in soundList)
         {
-            allSounds[SMD.musicName] = SMD.audioClip;
+            allSounds[KVP.musicName] = KVP.audioClip;
         }
-        foreach (KeyValuePair SMD in trackList)
+        foreach (KeyValuePair KVP in trackList)
         {
-            allTracks[SMD.musicName] = SMD.audioClip;
+            allTracks[KVP.musicName] = KVP.audioClip;
         }
-        foreach (KeyValuePair SMD in dialogueList)
+        foreach (KeyValuePair KVP in dialogueList)
         {
-            allDialogue[SMD.musicName] = SMD.audioClip;
+            allDialogue[KVP.musicName] = KVP.audioClip;
         }
     }
 

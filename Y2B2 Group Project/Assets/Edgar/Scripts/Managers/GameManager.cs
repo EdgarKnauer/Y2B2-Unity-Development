@@ -16,9 +16,6 @@ public class GameManager : MonoBehaviour
     {
         instance = this;
         //UpdateGameState(GameStates.GamePaused);
-
-
-
     }
 
     private void Start()
