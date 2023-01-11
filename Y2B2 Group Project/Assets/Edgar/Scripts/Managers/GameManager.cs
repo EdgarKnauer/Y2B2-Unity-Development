@@ -2,10 +2,11 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public GameStates gameStates;
+    public GameStates gameState;
 
     public delegate void StateSwitch();
-    public static event StateSwitch StateSwitched;
+    public event StateSwitch stateSwitched;
+
     private float originalTimeScale;
     public static GameManager instance;
 
@@ -15,28 +16,32 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         instance = this;
-        //UpdateGameState(GameStates.GamePaused);
     }
 
     private void Start()
     {
-        //Just for initial testing
-        //currentObjective = SM.getAudioClip("Dialogue", "CurrentObjectiveTest");
+
+        UpdateGameState(GameStates.GamePaused);
     }
 
     public void UpdateGameState(GameStates newState)
     {
-        gameStates = newState;
-        //switch (gameStates)
-        //{
-        //    case GameStates.GamePaused:
-        //        onGamePaused();
-        //        + currentObjective = SM.getAudioClip();
-        //        break;
+        gameState = newState;
+
+        switch (gameState)
+        {
+            case GameStates.StartUp:
+                
+                break;
+
+            case GameStates.GamePaused:
+                onGamePaused();
+                break;
 
 
-        //}
-        StateSwitched();
+        }
+
+        stateSwitched();
     }
 
 
@@ -58,9 +63,10 @@ public class GameManager : MonoBehaviour
 
     public enum GameStates
     {
+        StartUp,
         MainMenu,
+        GamePaused,
         Introduction,
-        Navigation,
         Objective1,
         Objective2,
         Objective3
