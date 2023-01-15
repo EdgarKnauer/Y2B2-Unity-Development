@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class ButtonFunctionality : MonoBehaviour
 {
-    [SerializeField] private CharacterController CC;
+    [SerializeField] private PlayerController PC;
     [SerializeField] private NPCBehaviour NPC;
     [SerializeField] private MusicManager MM;
     [SerializeField] private GameManager GM;
@@ -11,7 +11,7 @@ public class ButtonFunctionality : MonoBehaviour
 
     private void Awake()
     {
-        CC = FindObjectOfType<CharacterController>();
+        PC = FindObjectOfType<PlayerController>();
         NPC = FindObjectOfType<NPCBehaviour>();
         MM = FindObjectOfType<MusicManager>();
         GM = FindObjectOfType<GameManager>();
@@ -45,9 +45,9 @@ public class ButtonFunctionality : MonoBehaviour
 
     public void OnButtonRelease()
     {
-        if (CC.grabbedObj != null)
+        if (PC.grabbedObj != null)
         {
-            InteractableObject grabbedObj = CC.grabbedObj.GetComponent<InteractableObject>();
+            InteractableObject grabbedObj = PC.grabbedObj.GetComponent<InteractableObject>();
             //string gameState = GM.gameStates.ToString();
 
             switch (gameObject.name)

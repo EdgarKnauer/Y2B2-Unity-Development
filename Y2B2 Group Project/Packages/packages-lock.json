@@ -225,8 +225,8 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.xr.management": {
-      "version": "4.2.0",
-      "depth": 1,
+      "version": "4.2.1",
+      "depth": 0,
       "source": "registry",
       "dependencies": {
         "com.unity.modules.subsystems": "1.0.0",
@@ -249,7 +249,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.xr.picoxr": {
-      "version": "file:C:/Users/49176/OneDrive/Desktop/Y2B2GitRep/Y2B2-Unity-Development/PICO Unity Integration SDK v212",
+      "version": "file:C:/Users/49176/OneDrive/Desktop/Stuff/Prototyping/Pico Tool/PICO Unity Integration SDK v211",
       "depth": 0,
       "source": "local",
       "dependencies": {

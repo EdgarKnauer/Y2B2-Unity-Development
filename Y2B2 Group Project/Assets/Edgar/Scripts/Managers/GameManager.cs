@@ -20,8 +20,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-
-        UpdateGameState(GameStates.StartUp);
+        UpdateGameState(GameStates.GamePlay);
     }
 
     public void UpdateGameState(GameStates newState)
@@ -64,9 +63,11 @@ public class GameManager : MonoBehaviour
     public enum GameStates
     {
         StartUp,
+        Introduction,
         MainMenu,
         GamePaused,
-        Introduction,
+        GamePlay,
+        Navigation,
         Objective1,
         Objective2,
         Objective3

@@ -8,12 +8,12 @@ public class CanvasManager : MonoBehaviour
     [SerializeField] private GameManager gameManager;
 
 
-    [Header("OverlayCanvasPanels")]
-    [SerializeField] private GameObject StartUpPanel;
-    [SerializeField] private GameObject MainMenuPanel;
-    [SerializeField] private GameObject GamePausedPanel;
-    [SerializeField] private GameObject Introduction;
-    [SerializeField] private GameObject Navigation;
+    [Header("Canvas and Panels")]
+    [SerializeField] private GameObject navigationCanvas;
+    [SerializeField] private GameObject mainMenuPanel;
+    [SerializeField] private GameObject gamePausedPanel;
+    [SerializeField] private GameObject gamePlayPanel;
+    [SerializeField] private GameObject navigationPanel;
 
 
     [Header("CurrentlyActivePanel")]
@@ -23,11 +23,23 @@ public class CanvasManager : MonoBehaviour
     private void Awake()
     {
         gameManager = FindObjectOfType<GameManager>();
+
+        //Change this later in development!!!!
+        ///////////////////////////////
+        currentUIPanel = mainMenuPanel;
+        ///////////////////////////////
     }
-    
+
     private void OnEnable()
     {
         gameManager.stateSwitched += OnGameStateChanged;
+    }
+
+    private void Start()
+    {
+        mainMenuPanel.SetActive(false);
+        gamePausedPanel.SetActive(false);
+        navigationPanel.SetActive(false);        
     }
 
     private void OnGameStateChanged()
@@ -35,19 +47,20 @@ public class CanvasManager : MonoBehaviour
         string gameState = gameManager.gameState.ToString();
         switch (gameState)
         {
-            case "StartUp":
-                break;
-
             case "MainMenu":
                 break;
 
-            case "GamePaused":
+            case "GamePaused":                
                 break;
 
-            case "Introduction":
+            case "GamePlay":
+                ChangeUI(currentUIPanel, gamePlayPanel);
+                navigationCanvas.SetActive(false);
                 break;
 
             case "Navigation":
+                ChangeUI(currentUIPanel, navigationPanel);
+                navigationCanvas.SetActive(true);
                 break;
         }
     }
