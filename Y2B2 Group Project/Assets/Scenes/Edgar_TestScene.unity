@@ -3509,7 +3509,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ee8dd1042c84fa4fa2411e8c4ebcc01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gradientTime: 2
+  gradientTime: 5
   fadeColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &1221918888
 GameObject:
@@ -3991,6 +3991,9 @@ MonoBehaviour:
   - {fileID: 623398473}
   player: {fileID: 2045507345}
   cam: {fileID: 1200213316}
+  playerCanvas: {fileID: 0}
+  musicManager: {fileID: 0}
+  currentClip: {fileID: 0}
 --- !u!114 &1376902537
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5507,6 +5510,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   teleportationLocations: []
+  openingNavigation: 0
+  teleporting: 0
   grabbedObj: {fileID: 0}
 --- !u!114 &2045507346
 MonoBehaviour:
@@ -5602,7 +5607,21 @@ MonoBehaviour:
   customFps: 0
   screenFade: 1
   eyeTracking: 0
+  trackingMode: 0
+  faceTracking: 0
+  lipsyncTracking: 0
   foveationLevel: -1
+  openMRC: 0
+  foregroundLayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  backLayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  backCameraObj: {fileID: 0}
+  foregroundCameraObj: {fileID: 0}
+  mrcRenderTexture: {fileID: 0}
+  foregroundMrcRenderTexture: {fileID: 0}
   appCheckResult: 100
   useRecommendedAntiAliasingLevel: 1
 --- !u!1 &2047296476
