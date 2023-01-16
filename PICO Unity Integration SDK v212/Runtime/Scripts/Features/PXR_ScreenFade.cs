@@ -72,6 +72,7 @@ namespace Unity.XR.PXR
             StopAllCoroutines();
             StartCoroutine(ScreenFade(from, to));
         }
+
         IEnumerator ScreenFade(float from, float to)
         {
             float nowTime = 0.0f;
