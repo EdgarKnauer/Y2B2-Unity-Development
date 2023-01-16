@@ -20,8 +20,6 @@ public class NPCBehaviour : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Enter " + other.gameObject.name);
-
         if (other.CompareTag("Player"))
         {
             AudioSourceNPC.clip = GreetingClip;
@@ -32,8 +30,6 @@ public class NPCBehaviour : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        Debug.Log("Exit " + other.gameObject.name);
-
         if (other.CompareTag("Player"))
         {
             CanvasNPC.gameObject.SetActive(false);

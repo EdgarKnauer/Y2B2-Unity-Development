@@ -29,12 +29,10 @@ public class GameManager : MonoBehaviour
 
         switch (gameState)
         {
-            case GameStates.StartUp:
-                
+            case GameStates.StartUp:                
                 break;
 
-            case GameStates.GamePaused:
-                onGamePaused();
+            case GameStates.GamePlay:
                 break;
 
 

@@ -9,6 +9,8 @@ public class ButtonFunctionality : MonoBehaviour
     [SerializeField] private GameManager GM;
     private AudioClip currentClip;
 
+    private bool onlyOneObj;
+
     private void Awake()
     {
         PC = FindObjectOfType<PlayerController>();
@@ -45,47 +47,87 @@ public class ButtonFunctionality : MonoBehaviour
 
     public void OnButtonRelease()
     {
-        if (PC.grabbedObj != null)
+        if(CheckIfOnlyOneObjectHeld())
         {
-            InteractableObject grabbedObj = PC.grabbedObj.GetComponent<InteractableObject>();
-            //string gameState = GM.gameStates.ToString();
-
-            switch (gameObject.name)
+            if (PC.currentlyGrabbedObj != null)
             {
-                case "Task":
-                    currentClip = MM.getAudioClip("Dialogue", "CurrentObjectiveTest");
-                    //currentClip = GM.currentObjective;
-                    break;
+                InteractableObject grabbedObj = PC.currentlyGrabbedObj.GetComponent<InteractableObject>();
+                //string gameState = GM.gameStates.ToString();
 
-                case "Object":
-                    currentClip = MM.getAudioClip("Dialogue", grabbedObj.dialogueObject);
-                    break;
+                switch (gameObject.name)
+                {
+                    case "Task":
+                        currentClip = MM.getAudioClip("Dialogue", "CurrentObjectiveTest");
+                        //currentClip = GM.currentObjective;
+                        break;
 
-                case "Looks":
-                    currentClip = MM.getAudioClip("Dialogue", grabbedObj.dialogueLooks);
-                    break;
+                    case "Object":
+                        currentClip = MM.getAudioClip("Dialogue", grabbedObj.dialogueObject);
+                        break;
 
-                case "Dangers":
-                    currentClip = MM.getAudioClip("Dialogue", grabbedObj.dialogueDangers);
-                    break;
+                    case "Looks":
+                        currentClip = MM.getAudioClip("Dialogue", grabbedObj.dialogueLooks);
+                        break;
+
+                    case "Dangers":
+                        currentClip = MM.getAudioClip("Dialogue", grabbedObj.dialogueDangers);
+                        break;
+                }
+
+                StartCoroutine(clickPlay(currentClip));
             }
 
-            StartCoroutine(clickPlay(currentClip));
+            else
+            {
+                if (gameObject.name == "Task")
+                {
+                    currentClip = MM.getAudioClip("Dialogue", "CurrentObjectiveTest");
+                    //currentClip = GM.currentObjective;
+                }
+                else
+                {
+                    currentClip = MM.getAudioClip("Dialogue", "NoObject");
+                }
+                playClip(currentClip);
+            }
         }
 
         else
         {
-            if (gameObject.name == "Task")
-            {
-                currentClip = MM.getAudioClip("Dialogue", "CurrentObjectiveTest");
-                //currentClip = GM.currentObjective;
-            }
-            else
-            {
-                currentClip = MM.getAudioClip("Dialogue", "NoObject");
-            }
+            //Switch clip to, "You are holding to many objects"
+            currentClip = MM.getAudioClip("Dialogue", "CurrentObjectiveTest");
             playClip(currentClip);
+        }        
+    }
+
+    private bool CheckIfOnlyOneObjectHeld()
+    {
+        if(PC.grabbedObjLeftHand != null && PC.grabbedObjLeftHand != null)
+        {
+            onlyOneObj = false;
         }
+
+        else if(PC.grabbedObjLeftHand != null && PC.grabbedObjLeftHand == null)
+        {
+            onlyOneObj = true;
+            PC.currentlyGrabbedObj = PC.grabbedObjLeftHand;
+        }
+
+        else if (PC.grabbedObjLeftHand == null && PC.grabbedObjLeftHand != null)
+        {
+            onlyOneObj = true;
+            PC.currentlyGrabbedObj = PC.grabbedObjRightHand;
+        }
+
+        else if (PC.grabbedObjLeftHand == null && PC.grabbedObjLeftHand == null)
+        {
+            onlyOneObj = true;
+            PC.currentlyGrabbedObj = null;
+        }
+
+        else { }
+
+        return onlyOneObj;
     }
 
     private void playClip(AudioClip clip)

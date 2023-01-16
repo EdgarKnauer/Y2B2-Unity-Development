@@ -23,7 +23,9 @@ public class PlayerController : MonoBehaviour
     public bool openingNavigation = false;
     public bool teleporting = false;
 
-    public GameObject grabbedObj;
+    public GameObject grabbedObjLeftHand;
+    public GameObject grabbedObjRightHand;
+    public GameObject currentlyGrabbedObj;
 
 
     private void Awake()
