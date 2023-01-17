@@ -32,7 +32,7 @@ public class NavigationButtonFunctionality : MonoBehaviour
         {
             player.teleporting = true;
             StopAllCoroutines();
-            StartCoroutine(ScreenFader(navigationLocations[1]));
+            StartCoroutine(ScreenFader(navigationLocations[2]));
         }        
     }
 
@@ -42,7 +42,7 @@ public class NavigationButtonFunctionality : MonoBehaviour
         {
             player.teleporting = true;
             StopAllCoroutines();
-            StartCoroutine(ScreenFader(navigationLocations[2]));
+            StartCoroutine(ScreenFader(navigationLocations[1]));
         }
     }
 
