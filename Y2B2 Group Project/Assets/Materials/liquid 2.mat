@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: liquid 2
-  m_Shader: {fileID: -6465566751694194690, guid: c6ee701c84f75c841be243dd2e021794,
+  m_Shader: {fileID: -6465566751694194690, guid: 3c804def062fbe642be23bcf50de1734,
     type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []

@@ -80,7 +80,7 @@ Material:
     m_Ints: []
     m_Floats:
     - FluidColor: 0
-    - FluidLevel: 0.11
+    - FluidLevel: 0
     - Vector1_297ee1714e8744698b9eabc540e98c9a: 0
     - Vector1_e46186ea02264cf59d8bec735348fb19: 0.11
     - _AlphaClip: 0
