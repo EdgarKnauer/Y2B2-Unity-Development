@@ -17,7 +17,6 @@ public class PlayerController : MonoBehaviour
 
 
     [Header("GeneralSetUp")]
-    [SerializeField] private List<Transform> teleportationLocations;
     private string currentGameState;
     private NavigationButtonFunctionality NBF;
     public bool openingNavigation = false;
@@ -68,7 +67,7 @@ public class PlayerController : MonoBehaviour
                 //    gameManager.UpdateGameState(GameManager.GameStates.Navigation);
                 //};
 
-                if(Input.GetKeyUp("space"))
+                if(Input.GetKeyUp("n"))
                 {
                     StartCoroutine(OpeningNavigation());
                     Debug.Log("SwitchedGameStateGamePLay");
@@ -87,7 +86,7 @@ public class PlayerController : MonoBehaviour
                 //    gameManager.UpdateGameState(GameManager.GameStates.GamePlay);
                 //};
 
-                if (Input.GetKeyUp("space"))
+                if (Input.GetKeyUp("n"))
                 {
                     Debug.Log("SwitchedGameStateNavigation");
                     openingNavigation = false;

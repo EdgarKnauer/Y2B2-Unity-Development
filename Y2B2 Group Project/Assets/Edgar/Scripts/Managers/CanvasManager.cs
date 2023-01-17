@@ -10,10 +10,6 @@ public class CanvasManager : MonoBehaviour
 
     [Header("Canvas and Panels")]
     [SerializeField] private GameObject navigationCanvas;
-    [SerializeField] private GameObject mainMenuPanel;
-    [SerializeField] private GameObject gamePausedPanel;
-    [SerializeField] private GameObject gamePlayPanel;
-    [SerializeField] private GameObject navigationPanel;
 
 
     [Header("CurrentlyActivePanel")]
@@ -23,11 +19,6 @@ public class CanvasManager : MonoBehaviour
     private void Awake()
     {
         gameManager = FindObjectOfType<GameManager>();
-
-        //Change this later in development!!!!
-        ///////////////////////////////
-        currentUIPanel = mainMenuPanel;
-        ///////////////////////////////
     }
 
     private void OnEnable()
@@ -37,9 +28,7 @@ public class CanvasManager : MonoBehaviour
 
     private void Start()
     {
-        mainMenuPanel.SetActive(false);
-        gamePausedPanel.SetActive(false);
-        navigationPanel.SetActive(false);        
+        navigationCanvas.SetActive(false);        
     }
 
     private void OnGameStateChanged()
@@ -54,12 +43,10 @@ public class CanvasManager : MonoBehaviour
                 break;
 
             case "GamePlay":
-                ChangeUI(currentUIPanel, gamePlayPanel);
                 navigationCanvas.SetActive(false);
                 break;
 
             case "Navigation":
-                ChangeUI(currentUIPanel, navigationPanel);
                 navigationCanvas.SetActive(true);
                 break;
         }
@@ -76,6 +63,4 @@ public class CanvasManager : MonoBehaviour
     {
         gameManager.stateSwitched -= OnGameStateChanged;
     }
-
-
 }

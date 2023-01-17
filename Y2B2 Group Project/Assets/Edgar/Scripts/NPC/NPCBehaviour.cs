@@ -20,7 +20,7 @@ public class NPCBehaviour : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.GetComponent<PlayerController>())
         {
             AudioSourceNPC.clip = GreetingClip;
             AudioSourceNPC.Play();
@@ -30,7 +30,7 @@ public class NPCBehaviour : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.GetComponent<PlayerController>())
         {
             CanvasNPC.gameObject.SetActive(false);
             AudioSourceNPC.clip = FarewellClip;

@@ -66,15 +66,15 @@ public class NavigationButtonFunctionality : MonoBehaviour
             playerCanvas.GetComponent<AudioSource>().Stop();
             switch (gameObject.name)
             {
-                case "B_Worktable":
+                case "Workbench":
                     currentClip = musicManager.getAudioClip("Dialogue", "QuestionTask");
                     break;
 
-                case "B_Shelf":
+                case "VialShelf":
                     currentClip = musicManager.getAudioClip("Dialogue", "QuestionObject");
                     break;
 
-                case "B_SafetyEquip":
+                case "SafetyGear":
                     currentClip = musicManager.getAudioClip("Dialogue", "QuestionLooks");
                     break;
             }
