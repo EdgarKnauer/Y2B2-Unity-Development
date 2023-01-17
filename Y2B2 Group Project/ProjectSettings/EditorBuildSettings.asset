@@ -5,9 +5,12 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Konstantin/Konstantin.unity
     guid: 0033b78b3692cd04fab53895355eb3b0
+  - enabled: 1
+    path: Assets/Scenes/MainScene.unity
+    guid: 08386893f7ae30a43acc3f35f6d5ce6e
   m_configObjects:
     Unity.XR.PXR.Settings: {fileID: 11400000, guid: 3fee6a1637855264f84b552a1654563c,
       type: 2}
