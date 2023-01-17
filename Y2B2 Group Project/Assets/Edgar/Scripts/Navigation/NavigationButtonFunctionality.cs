@@ -13,8 +13,18 @@ public class NavigationButtonFunctionality : MonoBehaviour
     [SerializeField] private MusicManager musicManager;
 
     public AudioClip currentClip;
-    
 
+
+
+    public void OnWorktableButtonClicked()
+    {
+        if (!player.teleporting && !player.openingNavigation)
+        {
+            player.teleporting = true;
+            StopAllCoroutines();
+            StartCoroutine(ScreenFader(navigationLocations[0]));
+        }
+    }
 
     public void OnShelfButtonClicked()
     {
@@ -22,21 +32,11 @@ public class NavigationButtonFunctionality : MonoBehaviour
         {
             player.teleporting = true;
             StopAllCoroutines();
-            StartCoroutine(ScreenFader(navigationLocations[0]));
+            StartCoroutine(ScreenFader(navigationLocations[1]));
         }        
     }
 
     public void OnSafetyEquipButtonClicked()
-    {
-        if (!player.teleporting && !player.openingNavigation)
-        {
-            player.teleporting = true;
-            StopAllCoroutines();
-            StartCoroutine(ScreenFader(navigationLocations[1]));
-        }
-    }
-
-    public void OnWorktableButtonClicked()
     {
         if (!player.teleporting && !player.openingNavigation)
         {
@@ -48,13 +48,13 @@ public class NavigationButtonFunctionality : MonoBehaviour
 
     IEnumerator ScreenFader(Transform teleportLocation)
     {        
-      //cam.GetComponent<Unity.XR.PXR.PXR_ScreenFade>().StartScreenFade(0, 1);
+        cam.GetComponent<Unity.XR.PXR.PXR_ScreenFade>().StartScreenFade(0, 1);
         yield return new WaitForSeconds(cam.GetComponent<Unity.XR.PXR.PXR_ScreenFade>().gradientTime);
 
         player.transform.position = teleportLocation.position;
         player.transform.rotation = teleportLocation.rotation;
 
-      //cam.GetComponent<Unity.XR.PXR.PXR_ScreenFade>().StartScreenFade(1, 0);
+        cam.GetComponent<Unity.XR.PXR.PXR_ScreenFade>().StartScreenFade(1, 0);
         player.teleporting = false;
     }
 
@@ -62,7 +62,6 @@ public class NavigationButtonFunctionality : MonoBehaviour
     {
         if(!player.teleporting && !player.openingNavigation)
         {
-            StopAllCoroutines();
             playerCanvas.GetComponent<AudioSource>().Stop();
             switch (gameObject.name)
             {

@@ -128,7 +128,6 @@ public class PlayerController : MonoBehaviour
         openingNavigation = true;
         AudioClip clip = musicManager.getAudioClip("Dialogue", "NoObject");
         NBF.playClip(clip);
-        Debug.Log(clip.length);
         yield return new WaitForSecondsRealtime(clip.length);
         openingNavigation = false;
     }
