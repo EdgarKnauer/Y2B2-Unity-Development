@@ -55,6 +55,7 @@ public class NavigationButtonFunctionality : MonoBehaviour
         player.transform.rotation = teleportLocation.rotation;
 
         cam.GetComponent<Unity.XR.PXR.PXR_ScreenFade>().StartScreenFade(1, 0);
+        yield return new WaitForSeconds(cam.GetComponent<Unity.XR.PXR.PXR_ScreenFade>().gradientTime);
         player.teleporting = false;
     }
 

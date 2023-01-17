@@ -15,7 +15,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private PlayerInpuActions playerControls;
     private InputAction menuButton;
 
-
     [Header("GeneralSetUp")]
     private string currentGameState;
     private NavigationButtonFunctionality NBF;
@@ -26,6 +25,8 @@ public class PlayerController : MonoBehaviour
     public GameObject grabbedObjRightHand;
     public GameObject currentlyGrabbedObj;
 
+    [SerializeField] private GameObject leftHand;
+    [SerializeField] private GameObject rightHand;
 
     private void Awake()
     {
@@ -34,9 +35,24 @@ public class PlayerController : MonoBehaviour
         NBF = FindObjectOfType<NavigationButtonFunctionality>();
     }
 
+    public void DeActivateLineRenderers(bool activate)
+    {
+        if(activate)
+        {
+            leftHand.GetComponent<UnityEngine.XR.Interaction.Toolkit.XRInteractorLineVisual>().lineLength = 10;
+            rightHand.GetComponent<UnityEngine.XR.Interaction.Toolkit.XRInteractorLineVisual>().lineLength = 10;
+        }
+        else
+        {
+            leftHand.GetComponent<UnityEngine.XR.Interaction.Toolkit.XRInteractorLineVisual>().lineLength = 0;
+            rightHand.GetComponent<UnityEngine.XR.Interaction.Toolkit.XRInteractorLineVisual>().lineLength = 0;
+        }        
+    }
+
     private void OnEnable()
     {
         gameManager.stateSwitched += OnGameStateChanged;
+        DeActivateLineRenderers(false);
 
         //menuButton = playerControls.Player.MenuButton;
 
@@ -71,6 +87,7 @@ public class PlayerController : MonoBehaviour
                 {
                     StartCoroutine(OpeningNavigation());
                     Debug.Log("SwitchedGameStateGamePLay");
+                    DeActivateLineRenderers(true);
                     gameManager.UpdateGameState(GameManager.GameStates.Navigation);
                 }
                 break;
@@ -91,6 +108,7 @@ public class PlayerController : MonoBehaviour
                     Debug.Log("SwitchedGameStateNavigation");
                     openingNavigation = false;
                     teleporting = false;
+                    DeActivateLineRenderers(false);
                     gameManager.UpdateGameState(GameManager.GameStates.GamePlay);
                 }
                 break;

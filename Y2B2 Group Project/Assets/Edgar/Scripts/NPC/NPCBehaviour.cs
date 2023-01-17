@@ -24,6 +24,7 @@ public class NPCBehaviour : MonoBehaviour
         {
             AudioSourceNPC.clip = GreetingClip;
             AudioSourceNPC.Play();
+            other.GetComponent<PlayerController>().DeActivateLineRenderers(true);
             StartCoroutine(Greetings(GreetingClip));
         }
     }
@@ -33,6 +34,8 @@ public class NPCBehaviour : MonoBehaviour
         if (other.GetComponent<PlayerController>())
         {
             CanvasNPC.gameObject.SetActive(false);
+            other.GetComponent<PlayerController>().DeActivateLineRenderers(false);
+
             AudioSourceNPC.clip = FarewellClip;
             AudioSourceNPC.Play();
         }        
