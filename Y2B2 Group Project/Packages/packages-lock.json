@@ -249,7 +249,11 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.xr.picoxr": {
+<<<<<<< Updated upstream
       "version": "file:D:/Y2B2Game/Y2B2-Unity-Development/PICO Unity Integration SDK v212",
+=======
+      "version": "file:D:/GitHub/Y2B2-Unity-Development/PICO Unity Integration SDK v212",
+>>>>>>> Stashed changes
       "depth": 0,
       "source": "local",
       "dependencies": {

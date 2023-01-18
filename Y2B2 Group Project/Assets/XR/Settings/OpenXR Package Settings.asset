@@ -203,9 +203,15 @@ MonoBehaviour:
   - {fileID: 5296936847960074598}
   - {fileID: -6045477460931020051}
   - {fileID: 2955219793102823143}
+<<<<<<< Updated upstream
   - {fileID: -7895795140286062896}
   - {fileID: -7001275440713342880}
   - {fileID: 3266971699738773533}
+=======
+  - {fileID: -3548295692848552331}
+  - {fileID: -7001275440713342880}
+  - {fileID: -1430886664482060670}
+>>>>>>> Stashed changes
   - {fileID: 2815948911468755441}
   - {fileID: -7683317828679426476}
   - {fileID: 5838068601036623452}
@@ -296,6 +302,47 @@ MonoBehaviour:
   priority: 0
   required: 0
   ignoreValidationErrors: 0
+--- !u!114 &-3548295692848552331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55a4959af032305438a04d410c6b0418, type: 3}
+  m_Name: InterceptCreateSessionFeature Standalone
+  m_EditorClassIdentifier: 
+  m_enabled: 0
+  nameUi: 'Sample: Intercept Create Session'
+  version: 0.0.1
+  featureIdInternal: com.unity.openxr.feature.example.intercept
+  openxrExtensionStrings: XR_test
+  company: Unity
+  priority: 0
+  required: 0
+  message: Hello from C#!
+--- !u!114 &-1430886664482060670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2fe570546b5b2046873e03d7b882369, type: 3}
+  m_Name: MeshingTeapotFeature Standalone
+  m_EditorClassIdentifier: 
+  m_enabled: 0
+  nameUi: 'Sample: Meshing Teapot'
+  version: 0.0.1
+  featureIdInternal: com.unity.openxr.feature.example.meshing
+  openxrExtensionStrings: 
+  company: Unity
+  priority: 0
+  required: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -433,6 +480,26 @@ MonoBehaviour:
   company: Unity
   priority: 0
   required: 0
+--- !u!114 &2819038947599973232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2fe570546b5b2046873e03d7b882369, type: 3}
+  m_Name: MeshingTeapotFeature Android
+  m_EditorClassIdentifier: 
+  m_enabled: 0
+  nameUi: 'Sample: Meshing Teapot'
+  version: 0.0.1
+  featureIdInternal: com.unity.openxr.feature.example.meshing
+  openxrExtensionStrings: 
+  company: Unity
+  priority: 0
+  required: 0
 --- !u!114 &2873161920508653881
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -474,7 +541,11 @@ MonoBehaviour:
   company: Unity
   priority: 0
   required: 0
+<<<<<<< Updated upstream
 --- !u!114 &3266971699738773533
+=======
+--- !u!114 &3480365061251165082
+>>>>>>> Stashed changes
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -483,6 +554,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
+<<<<<<< Updated upstream
   m_Script: {fileID: 11500000, guid: b2fe570546b5b2046873e03d7b882369, type: 3}
   m_Name: MeshingTeapotFeature Standalone
   m_EditorClassIdentifier: 
@@ -494,6 +566,20 @@ MonoBehaviour:
   company: Unity
   priority: 0
   required: 0
+=======
+  m_Script: {fileID: 11500000, guid: 55a4959af032305438a04d410c6b0418, type: 3}
+  m_Name: InterceptCreateSessionFeature Android
+  m_EditorClassIdentifier: 
+  m_enabled: 0
+  nameUi: 'Sample: Intercept Create Session'
+  version: 0.0.1
+  featureIdInternal: com.unity.openxr.feature.example.intercept
+  openxrExtensionStrings: XR_test
+  company: Unity
+  priority: 0
+  required: 0
+  message: Hello from C#!
+>>>>>>> Stashed changes
 --- !u!114 &3682913815867614140
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -795,9 +881,15 @@ MonoBehaviour:
   features:
   - {fileID: 7423852649242759470}
   - {fileID: 1803312697979079057}
+<<<<<<< Updated upstream
   - {fileID: 5563797958004677105}
   - {fileID: 4121125218073326874}
   - {fileID: 1471918178917835192}
+=======
+  - {fileID: 3480365061251165082}
+  - {fileID: 4121125218073326874}
+  - {fileID: 2819038947599973232}
+>>>>>>> Stashed changes
   - {fileID: 6428056364205644064}
   - {fileID: -4228109925973638929}
   - {fileID: -5344046224630121368}
