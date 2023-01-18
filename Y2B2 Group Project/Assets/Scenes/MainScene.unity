@@ -8637,17 +8637,12 @@ MonoBehaviour:
   grabbedObjLeftHand: {fileID: 0}
   grabbedObjRightHand: {fileID: 0}
   currentlyGrabbedObj: {fileID: 0}
-<<<<<<< Updated upstream
   leftHand: {fileID: 185016753}
   rightHand: {fileID: 2129269517}
   leftController: 4
   rig: {fileID: 644910524}
   movementSpeed: 1
   checkBool1: 1
-=======
-  leftHand: {fileID: 0}
-  rightHand: {fileID: 0}
->>>>>>> Stashed changes
 --- !u!114 &644910523
 MonoBehaviour:
   m_ObjectHideFlags: 0
