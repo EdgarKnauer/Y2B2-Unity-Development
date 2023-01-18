@@ -48,14 +48,14 @@ public class NavigationButtonFunctionality : MonoBehaviour
 
     IEnumerator ScreenFader(Transform teleportLocation)
     {        
-        cam.GetComponent<PXR_ScreenFadeAdaptation>().StartScreenFade(0, 1);
-        yield return new WaitForSeconds(cam.GetComponent<PXR_ScreenFadeAdaptation>().gradientTime);
+        cam.GetComponent<Unity.XR.PXR.PXR_ScreenFade>().StartScreenFade(0, 1);
+        yield return new WaitForSeconds(cam.GetComponent<Unity.XR.PXR.PXR_ScreenFade>().gradientTime);
 
         player.transform.position = teleportLocation.position;
         player.transform.rotation = teleportLocation.rotation;
 
-        cam.GetComponent<PXR_ScreenFadeAdaptation>().StartScreenFade(1, 0);
-        yield return new WaitForSeconds(cam.GetComponent<PXR_ScreenFadeAdaptation>().gradientTime);
+        cam.GetComponent<Unity.XR.PXR.PXR_ScreenFade>().StartScreenFade(1, 0);
+        yield return new WaitForSeconds(cam.GetComponent<Unity.XR.PXR.PXR_ScreenFade>().gradientTime);
         player.teleporting = false;
     }
 

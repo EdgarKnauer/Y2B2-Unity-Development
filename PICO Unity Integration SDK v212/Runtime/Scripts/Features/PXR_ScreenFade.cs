@@ -41,7 +41,7 @@ namespace Unity.XR.PXR
         }
         void OnEnable()
         {
-            StartCoroutine(ScreenFade());
+            StartCoroutine(ScreenFade(1, 0));
         }
         void OnDestroy()
         {
@@ -65,13 +65,19 @@ namespace Unity.XR.PXR
             SetAlpha();
         }
 
-        IEnumerator ScreenFade()
+        public void StartScreenFade(float from, float to)
+        {
+            StopAllCoroutines();
+            StartCoroutine(ScreenFade(from, to));
+        }
+
+        IEnumerator ScreenFade(float from, float to)
         {
             float nowTime = 0.0f;
             while (nowTime < gradientTime)
             {
                 nowTime += Time.deltaTime;
-                nowFadeAlpha = Mathf.Lerp(1, 0, Mathf.Clamp01(nowTime / gradientTime));
+                nowFadeAlpha = Mathf.Lerp(from, to, Mathf.Clamp01(nowTime / gradientTime));
                 SetAlpha();
                 yield return new WaitForEndOfFrame();
             }
