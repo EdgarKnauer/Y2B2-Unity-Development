@@ -47,7 +47,8 @@ public class ButtonFunctionality : MonoBehaviour
 
     public void OnButtonRelease()
     {
-        if(CheckIfOnlyOneObjectHeld())
+        bool check = CheckIfOnlyOneObjectHeld();
+        if (check)
         {
             if (PC.currentlyGrabbedObj != null)
             {
@@ -102,24 +103,24 @@ public class ButtonFunctionality : MonoBehaviour
 
     private bool CheckIfOnlyOneObjectHeld()
     {
-        if(PC.grabbedObjLeftHand != null && PC.grabbedObjLeftHand != null)
+        if(PC.grabbedObjLeftHand != null && PC.grabbedObjRightHand != null)
         {
             onlyOneObj = false;
         }
 
-        else if(PC.grabbedObjLeftHand != null && PC.grabbedObjLeftHand == null)
+        else if(PC.grabbedObjLeftHand != null && PC.grabbedObjRightHand == null)
         {
             onlyOneObj = true;
             PC.currentlyGrabbedObj = PC.grabbedObjLeftHand;
         }
 
-        else if (PC.grabbedObjLeftHand == null && PC.grabbedObjLeftHand != null)
+        else if (PC.grabbedObjLeftHand == null && PC.grabbedObjRightHand != null)
         {
             onlyOneObj = true;
             PC.currentlyGrabbedObj = PC.grabbedObjRightHand;
         }
 
-        else if (PC.grabbedObjLeftHand == null && PC.grabbedObjLeftHand == null)
+        else if (PC.grabbedObjLeftHand == null && PC.grabbedObjRightHand == null)
         {
             onlyOneObj = true;
             PC.currentlyGrabbedObj = null;

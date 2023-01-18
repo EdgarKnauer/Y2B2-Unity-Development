@@ -42,8 +42,7 @@ public class PlayerController : MonoBehaviour
         gameManager = FindObjectOfType<GameManager>();
         musicManager = FindObjectOfType<MusicManager>();
         NBF = FindObjectOfType<NavigationButtonFunctionality>();
-    }
-        
+    }        
 
     private void OnEnable()
     {
