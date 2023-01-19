@@ -46,7 +46,6 @@ public class FinalCheck : MonoBehaviour
 
         else
         {
-            redLight
             //play wrong sound
         }
     }
