@@ -17280,7 +17280,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 89b45151b11f49446a6eea9d662b48f3, type: 3}
   - {fileID: 21300000, guid: 98cf004acf52bae4dac870dff5a00ff2, type: 3}
   - {fileID: 21300000, guid: 8cc3ca7120832df4e914fe295d1fc996, type: 3}
-  button: {fileID: 0}
+  button: {fileID: 1830587546}
 --- !u!4 &1115591376
 Transform:
   m_ObjectHideFlags: 0

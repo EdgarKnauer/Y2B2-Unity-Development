@@ -13,12 +13,14 @@ public class Tutorial : MonoBehaviour
 
     [SerializeField] private GameObject button;
 
+    [SerializeField] private AudioSource goedGedaan;
+
     // Start is called before the first frame update
     void Start()
     {
         currentObjective = "Press A";
-        ChangeLeftSprite(1);
-        ChangeRightSprite(1);
+        ChangeLeftSprite(0);
+        ChangeRightSprite(0);
     }
 
     // Update is called once per frame
@@ -28,26 +30,33 @@ public class Tutorial : MonoBehaviour
         {
             if (Input.GetButtonDown("primaryButton"))
             {
+                goedGedaan.Play(0);
+
                 currentObjective = "Press B";
                 ChangeLeftSprite(2);
-                ChangeRightSprite(2);
+                ChangeRightSprite(2);              
             }
         }
         else if (currentObjective == "Press B")
         {
             if (Input.GetButtonDown("secondaryButton"))
             {
+                goedGedaan.Play(0);
+
                 currentObjective = "Pick up an item";
                 ChangeRightSprite(3);
+               
             }
         }
         else if (currentObjective == "Pick up an item")
         {
             //If the player succesfully picked up an item
-            //{
+            //{   
+            //    goedGedaan.Play(0);
+            //
             //    currentObjective = "Point and press trigger"
             //    ChangeRightSprite(5);
-            //    button.SetActive(true);
+            //    button.SetActive(true);    
             //}
         }
         else if (currentObjective == "Point and press trigger")
