@@ -13,7 +13,7 @@ public class LevelChange : MonoBehaviour
         {
             if (liquidLevel > -0.11f)
             {
-                liquidLevel = liquidLevel - 0.004f;
+                liquidLevel = liquidLevel - 0.0025f;
                 GetComponent<MeshRenderer>().material.SetFloat("FluidLevel", liquidLevel);
             }
         }

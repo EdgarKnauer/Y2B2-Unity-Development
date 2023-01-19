@@ -135,7 +135,9 @@ public class Outline : MonoBehaviour {
 
       UpdateMaterialProperties();
     }
-  }
+        outlineColor = Color.red;
+        outlineFillMaterial.SetColor("_OutlineColor", outlineColor);
+    }
 
   void OnDisable() {
     foreach (var renderer in renderers) {
