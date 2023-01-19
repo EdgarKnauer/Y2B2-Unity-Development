@@ -11,6 +11,8 @@ public class Tutorial : MonoBehaviour
 
     string currentObjective;
 
+    [SerializeField] private GameObject button;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -45,12 +47,15 @@ public class Tutorial : MonoBehaviour
             //{
             //    currentObjective = "Point and press trigger"
             //    ChangeRightSprite(5);
+            //    button.SetActive(true);
             //}
         }
         else if (currentObjective == "Point and press trigger")
         {
             //If the player succesfully pointed at an object and interacted with it
-            //Finish tutorial 
+            //button.SetActive(false);
+            //Finish tutorial
+            //Object.Destroy(this.gameObject)
         }
     }
 
@@ -63,4 +68,5 @@ public class Tutorial : MonoBehaviour
     {
         rightSpriteRenderer.sprite = imagesRightControllers[number];
     }
+   
 }
