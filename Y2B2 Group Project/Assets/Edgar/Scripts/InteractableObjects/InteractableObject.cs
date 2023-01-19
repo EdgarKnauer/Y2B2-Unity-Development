@@ -8,4 +8,7 @@ public class InteractableObject : MonoBehaviour
     public string dialogueDangers;
 
     public bool isGrabbed;
+    public GameObject coupledHand;
+    public string objType;
+    public string PHLevel;
 }

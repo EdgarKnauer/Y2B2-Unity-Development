@@ -249,7 +249,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.xr.picoxr": {
-      "version": "file:D:/GitHub/Y2B2-Unity-Development/PICO Unity Integration SDK v212",
+      "version": "file:../../PICO Unity Integration SDK v212",
       "depth": 0,
       "source": "local",
       "dependencies": {

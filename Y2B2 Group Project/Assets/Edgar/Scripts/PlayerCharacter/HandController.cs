@@ -9,8 +9,8 @@ public class HandController : MonoBehaviour
     [SerializeField] private XRNode leftController;
     [SerializeField] private XRNode rightController;
 
-    private bool leftTriggerPressed;
-    private bool rightTriggerPressed;
+    public bool leftTriggerPressed;
+    public bool rightTriggerPressed;
 
     [SerializeField] private GameObject hand;
     private PlayerController playerController;
@@ -51,6 +51,7 @@ public class HandController : MonoBehaviour
                     other.transform.parent = grabbedObjHandTransform;
                     other.GetComponent<Rigidbody>().isKinematic = true;
                     other.GetComponent<InteractableObject>().isGrabbed = true;
+                    other.GetComponent<InteractableObject>().coupledHand = gameObject;
 
                     playerController.grabbedObjLeftHand = other.gameObject;
                     objLeftHand = other.gameObject;
@@ -68,6 +69,7 @@ public class HandController : MonoBehaviour
                         other.transform.parent = classroomParentTransform;
                         other.GetComponent<Rigidbody>().isKinematic = false;
                         other.GetComponent<InteractableObject>().isGrabbed = false;
+                        other.GetComponent<InteractableObject>().coupledHand = null;
 
                         playerController.grabbedObjLeftHand = null;
                         objLeftHand = null;
@@ -85,6 +87,7 @@ public class HandController : MonoBehaviour
                     other.transform.parent = grabbedObjHandTransform;
                     other.GetComponent<Rigidbody>().isKinematic = true;
                     other.GetComponent<InteractableObject>().isGrabbed = true;
+                    other.GetComponent<InteractableObject>().coupledHand = gameObject;
 
                     playerController.grabbedObjRightHand = other.gameObject;
                     objRightHand = other.gameObject;
@@ -102,6 +105,7 @@ public class HandController : MonoBehaviour
                         other.transform.parent = classroomParentTransform;
                         other.GetComponent<Rigidbody>().isKinematic = false;
                         other.GetComponent<InteractableObject>().isGrabbed = false;
+                        other.GetComponent<InteractableObject>().coupledHand = null;
 
                         playerController.grabbedObjRightHand = null;
                         objRightHand = null;
