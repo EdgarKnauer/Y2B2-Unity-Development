@@ -14,6 +14,11 @@ public class Tutorial : MonoBehaviour
     [SerializeField] private GameObject button;
 
     [SerializeField] private AudioSource goedGedaan;
+    [SerializeField] private AudioSource voordatWeBeginnen;
+    [SerializeField] private AudioSource allereerstAEnB;
+    [SerializeField] private AudioSource gripKnop;
+    [SerializeField] private AudioSource triggerKnop;
+    [SerializeField] private AudioSource eindeTutorial;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +26,8 @@ public class Tutorial : MonoBehaviour
         currentObjective = "Press A";
         ChangeLeftSprite(0);
         ChangeRightSprite(0);
+
+        voordatWeBeginnen.Play(1);
     }
 
     // Update is called once per frame
@@ -78,4 +85,8 @@ public class Tutorial : MonoBehaviour
         rightSpriteRenderer.sprite = imagesRightControllers[number];
     }
    
+    void PressAAndB()
+    {
+
+    }
 }
