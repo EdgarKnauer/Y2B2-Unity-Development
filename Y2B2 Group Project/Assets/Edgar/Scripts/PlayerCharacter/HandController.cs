@@ -93,6 +93,11 @@ public class HandController : MonoBehaviour
                     objRightHand = other.gameObject;
 
                     objGrabbedRH = true;
+
+                    if (other.gameObject.tag == "TutorialObject")
+                    {
+                        other.gameObject.tag = "TutorialDone";
+                    }
                 }
             }
 

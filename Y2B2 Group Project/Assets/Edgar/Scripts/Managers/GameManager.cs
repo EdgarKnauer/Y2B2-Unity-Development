@@ -35,6 +35,9 @@ public class GameManager : MonoBehaviour
             case GameStates.GamePlay:
                 break;
 
+            case GameStates.Introduction:
+                break;
+
 
         }
 
