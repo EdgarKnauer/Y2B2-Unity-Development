@@ -100,7 +100,6 @@ public class Vial : MonoBehaviour
                 {
                     Debug.Log("Vial has collided with another vial but has no coupled Hand-Object");
                 }
-
             }
 
             else
