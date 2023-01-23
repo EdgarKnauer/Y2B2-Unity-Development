@@ -9,8 +9,11 @@ public class LevelChange2 : MonoBehaviour
     public float gradientLevel = 0f;
     private bool button = false;
 
-    private void FixedUpdate()
+    private void Update()
     {
+        Debug.Log("currentLiquidLevel" + liquidLevel2);
+        GetComponent<MeshRenderer>().material.SetFloat("FluidLevel", liquidLevel2);
+
         if (pouringFlask.transform.rotation.eulerAngles.z > 90 && pouringFlask.transform.rotation.eulerAngles.z < 270)
         {
             if (liquidLevel2 < 0.11f)

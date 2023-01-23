@@ -17,11 +17,14 @@ public class HandController : MonoBehaviour
     [SerializeField] private Transform grabbedObjHandTransform;
     [SerializeField] private Transform classroomParentTransform;
 
-    private GameObject objLeftHand;
-    private GameObject objRightHand;
+    [SerializeField] private GameObject objLeftHand;
+    [SerializeField] private GameObject objRightHand;
 
     [SerializeField] private bool objGrabbedLH = false;
     [SerializeField] private bool objGrabbedRH = false;
+
+    public Transform handModel;
+    public bool isPouring;
 
     private void Awake()
     {
@@ -40,76 +43,80 @@ public class HandController : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if(other.GetComponent<InteractableObject>())
+        if (!isPouring)
         {
-            if (!objGrabbedLH)
+            if (other.GetComponent<InteractableObject>())
             {
-                if (leftTriggerPressed && hand.name == "LeftHand Controller" && !other.GetComponent<InteractableObject>().isGrabbed)
+                if (!objGrabbedLH)
                 {
-                    other.transform.position = grabbedObjHandTransform.position;
-                    other.transform.rotation = grabbedObjHandTransform.rotation;
-                    other.transform.parent = grabbedObjHandTransform;
-                    other.GetComponent<Rigidbody>().isKinematic = true;
-                    other.GetComponent<InteractableObject>().isGrabbed = true;
-                    other.GetComponent<InteractableObject>().coupledHand = gameObject;
-
-                    playerController.grabbedObjLeftHand = other.gameObject;
-                    objLeftHand = other.gameObject;
-
-                    objGrabbedLH = true;
-                }
-            }
-
-            else
-            {
-                if (!leftTriggerPressed && hand.name == "LeftHand Controller")
-                {
-                    if (objLeftHand != null)
+                    if (leftTriggerPressed && hand.name == "LeftHand Controller" && !other.GetComponent<InteractableObject>().isGrabbed)
                     {
-                        other.transform.parent = classroomParentTransform;
-                        other.GetComponent<Rigidbody>().isKinematic = false;
-                        other.GetComponent<InteractableObject>().isGrabbed = false;
-                        other.GetComponent<InteractableObject>().coupledHand = null;
+                        objGrabbedLH = true;
+                        objLeftHand = other.gameObject;
 
-                        playerController.grabbedObjLeftHand = null;
-                        objLeftHand = null;
-                        objGrabbedLH = false;
+
+                        objLeftHand.transform.position = grabbedObjHandTransform.position;
+                        objLeftHand.transform.rotation = grabbedObjHandTransform.rotation;
+                        objLeftHand.transform.parent = grabbedObjHandTransform;
+                        objLeftHand.GetComponent<Rigidbody>().isKinematic = true;
+                        objLeftHand.GetComponent<InteractableObject>().isGrabbed = true;
+                        objLeftHand.GetComponent<InteractableObject>().coupledHand = gameObject;
+
+                        playerController.grabbedObjLeftHand = objLeftHand.gameObject;
                     }
                 }
-            }
 
-            if (!objGrabbedRH)
-            {
-                if (rightTriggerPressed && hand.name == "RightHand Controller" && !other.GetComponent<InteractableObject>().isGrabbed)
+                else
                 {
-                    other.transform.position = grabbedObjHandTransform.position;
-                    other.transform.rotation = grabbedObjHandTransform.rotation;
-                    other.transform.parent = grabbedObjHandTransform;
-                    other.GetComponent<Rigidbody>().isKinematic = true;
-                    other.GetComponent<InteractableObject>().isGrabbed = true;
-                    other.GetComponent<InteractableObject>().coupledHand = gameObject;
-
-                    playerController.grabbedObjRightHand = other.gameObject;
-                    objRightHand = other.gameObject;
-
-                    objGrabbedRH = true;
-                }
-            }
-
-            else
-            {
-                if (!rightTriggerPressed && hand.name == "RightHand Controller")
-                {
-                    if (objRightHand != null)
+                    if (!leftTriggerPressed && hand.name == "LeftHand Controller")
                     {
-                        other.transform.parent = classroomParentTransform;
-                        other.GetComponent<Rigidbody>().isKinematic = false;
-                        other.GetComponent<InteractableObject>().isGrabbed = false;
-                        other.GetComponent<InteractableObject>().coupledHand = null;
+                        if (objLeftHand != null)
+                        {
+                            objLeftHand.transform.parent = classroomParentTransform;
+                            objLeftHand.GetComponent<Rigidbody>().isKinematic = false;
+                            objLeftHand.GetComponent<InteractableObject>().isGrabbed = false;
+                            objLeftHand.GetComponent<InteractableObject>().coupledHand = null;
 
-                        playerController.grabbedObjRightHand = null;
-                        objRightHand = null;
-                        objGrabbedRH = false;
+                            playerController.grabbedObjLeftHand = null;
+                            objLeftHand = null;
+                            objGrabbedLH = false;
+                        }
+                    }
+                }
+
+                if (!objGrabbedRH)
+                {
+                    if (rightTriggerPressed && hand.name == "RightHand Controller" && !other.GetComponent<InteractableObject>().isGrabbed)
+                    {
+                        objGrabbedRH = true;
+                        objRightHand = other.gameObject;
+
+                        objRightHand.transform.position = grabbedObjHandTransform.position;
+                        objRightHand.transform.rotation = grabbedObjHandTransform.rotation;
+                        objRightHand.transform.parent = grabbedObjHandTransform;
+                        objRightHand.GetComponent<Rigidbody>().isKinematic = true;
+                        objRightHand.GetComponent<InteractableObject>().isGrabbed = true;
+                        objRightHand.GetComponent<InteractableObject>().coupledHand = gameObject;
+
+                        playerController.grabbedObjRightHand = objRightHand.gameObject;
+                    }
+                }
+
+                else
+                {
+                    if (!rightTriggerPressed && hand.name == "RightHand Controller")
+                    {
+                        if (objRightHand != null)
+                        {
+                            objRightHand.transform.parent = classroomParentTransform;
+                            objRightHand.GetComponent<Rigidbody>().isKinematic = false;
+                            objRightHand.GetComponent<InteractableObject>().isGrabbed = false;
+                            objRightHand.GetComponent<InteractableObject>().coupledHand = null;
+
+                            playerController.grabbedObjRightHand = null;
+                            objRightHand = null;
+                            objGrabbedRH = false;
+                        }
                     }
                 }
             }

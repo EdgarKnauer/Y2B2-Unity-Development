@@ -21,7 +21,7 @@ public class FinalCheck : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if(other.GetComponent<InteractableObject>().objType == "Vial")
+        if(other.GetComponent<Vial>())
         {
             InteractableObject vial = other.GetComponent<InteractableObject>();
             if(vial.coupledHand.name == "LeftHand Controller")
@@ -41,7 +41,6 @@ public class FinalCheck : MonoBehaviour
                     teleportVial(other.gameObject);
                 }
             }
-
         }
 
         else
@@ -73,59 +72,59 @@ public class FinalCheck : MonoBehaviour
         currentCoupledVial = vial;
         vial.transform.position = tp_coupledObj.position;
         vial.transform.rotation = tp_coupledObj.rotation;
-        correctCheck(vial);
+        //correctCheck(vial);
     }
 
-    private void correctCheck(GameObject vial)
-    {
-        switch(neededPHLevel)
-        {
-            case "acidic":
-                if(vial.GetComponent<InteractableObject>().PHLevel == "acidic")
-                {
-                    //Light green
-                    correctPHVial = true;
-                }
-                else
-                {
-                    //light red
-                }
-                break;
+    //private void correctCheck(GameObject vial)
+    //{
+    //    switch(neededPHLevel)
+    //    {
+    //        case "acidic":
+    //            if(vial.GetComponent<InteractableObject>().PHLevel == "acidic")
+    //            {
+    //                //Light green
+    //                correctPHVial = true;
+    //            }
+    //            else
+    //            {
+    //                //light red
+    //            }
+    //            break;
 
 
-            case "base":
-                if (vial.GetComponent<InteractableObject>().PHLevel == "base")
-                {
-                    //Light green
-                    correctPHVial = true;
-                }
-                else
-                {
-                    //light red
-                }
-                break;
+    //        case "base":
+    //            if (vial.GetComponent<InteractableObject>().PHLevel == "base")
+    //            {
+    //                //Light green
+    //                correctPHVial = true;
+    //            }
+    //            else
+    //            {
+    //                //light red
+    //            }
+    //            break;
 
 
-            case "neutral":
-                if (vial.GetComponent<InteractableObject>().PHLevel == "neutral")
-                {
-                    //Light green
-                    correctPHVial = true;
-                }
-                else
-                {
-                    //light red
-                }
-                break;
-        }
+    //        case "neutral":
+    //            if (vial.GetComponent<InteractableObject>().PHLevel == "neutral")
+    //            {
+    //                //Light green
+    //                correctPHVial = true;
+    //            }
+    //            else
+    //            {
+    //                //light red
+    //            }
+    //            break;
+    //    }
 
-        if(stands[0].GetComponent<FinalCheck>().correctPHVial &&
-           stands[1].GetComponent<FinalCheck>().correctPHVial &&
-           stands[2].GetComponent<FinalCheck>().correctPHVial)
-        {
-            FinishedGame();
-        }   
-    }
+    //    if(stands[0].GetComponent<FinalCheck>().correctPHVial &&
+    //       stands[1].GetComponent<FinalCheck>().correctPHVial &&
+    //       stands[2].GetComponent<FinalCheck>().correctPHVial)
+    //    {
+    //        FinishedGame();
+    //    }   
+    //}
 
     private void FinishedGame()
     {

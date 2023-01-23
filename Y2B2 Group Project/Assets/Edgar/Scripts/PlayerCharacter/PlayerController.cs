@@ -78,8 +78,6 @@ public class PlayerController : MonoBehaviour
                 //{
                 //    gameManager.UpdateGameState(GameManager.GameStates.Navigation);
                 //};
-                Debug.Log(MBPressed + " MB pressed");
-                Debug.Log(checkBool1 +" Checkbool");
                 if(MBPressed && checkBool1)
                 {
                     checkBool1 = false;

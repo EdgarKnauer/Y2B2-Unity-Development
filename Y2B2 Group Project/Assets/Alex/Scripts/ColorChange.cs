@@ -16,7 +16,7 @@ public class ColorChange : MonoBehaviour
     {
         if (gradientLevel < 0.5f && button == true)
         {
-            gradientLevel = gradientLevel + 0.005f;
+            gradientLevel += 0.005f;
             GetComponent<MeshRenderer>().material.SetFloat("FluidColor", gradientLevel);
         }
     }
