@@ -68,7 +68,30 @@ public class HandController : MonoBehaviour
 
                 else
                 {
-                    if (!leftTriggerPressed && hand.name == "LeftHand Controller")
+                    other.transform.position = grabbedObjHandTransform.position;
+                    other.transform.rotation = grabbedObjHandTransform.rotation;
+                    other.transform.parent = grabbedObjHandTransform;
+                    other.GetComponent<Rigidbody>().isKinematic = true;
+                    other.GetComponent<InteractableObject>().isGrabbed = true;
+                    other.GetComponent<InteractableObject>().coupledHand = gameObject;
+
+                    playerController.grabbedObjRightHand = other.gameObject;
+                    objRightHand = other.gameObject;
+
+                    objGrabbedRH = true;
+
+                    if (other.gameObject.tag == "TutorialObject")
+                    {
+                        other.gameObject.tag = "TutorialDone";
+                    }
+                }
+            }
+
+            else
+            {
+                if (!rightTriggerPressed && hand.name == "RightHand Controller")
+                {
+                    if (objRightHand != null)
                     {
                         if (objLeftHand != null)
                         {

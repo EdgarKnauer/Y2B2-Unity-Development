@@ -9,64 +9,85 @@ public class Tutorial : MonoBehaviour
     [SerializeField] private Sprite[] imagesLeftControllers;
     [SerializeField] private Sprite[] imagesRightControllers;
 
-    string currentObjective;
+    [SerializeField] private GameObject prologue;
+    [SerializeField] private GameObject objective1;
+    [SerializeField] private GameObject objective2;
+    [SerializeField] private GameObject objective3;
+    [SerializeField] private GameObject objective4;
+    [SerializeField] private GameObject epilogue;
 
     [SerializeField] private GameObject button;
+    [SerializeField] private GameObject tutorialBuis;
 
     [SerializeField] private AudioSource goedGedaan;
+    [SerializeField] private AudioSource voordatWeBeginnen;
+    [SerializeField] private AudioSource allereerstAEnB;
+    [SerializeField] private AudioSource gripKnop;
+    [SerializeField] private AudioSource triggerKnop;
+    [SerializeField] private AudioSource eindeTutorial;
 
     // Start is called before the first frame update
     void Start()
     {
-        currentObjective = "Press A";
         ChangeLeftSprite(0);
         ChangeRightSprite(0);
+
+        //audio.PlayOneShot(voordatWeBeginnen);
+        //Destroy(prologue, voordatWeBeginnen.length);
     }
 
     // Update is called once per frame
-    //void Update()
-    //{
-    //    if (currentObjective == "Press A")
-    //    {
-    //        if (Input.GetButtonDown("primaryButton"))
-    //        {
-    //            goedGedaan.Play(0);
+    void Update()
+    {
+        if (!prologue) objective1.SetActive(true);
 
-    //            currentObjective = "Press B";
-    //            ChangeLeftSprite(2);
-    //            ChangeRightSprite(2);              
-    //        }
-    //    }
-    //    else if (currentObjective == "Press B")
-    //    {
-    //        if (Input.GetButtonDown("secondaryButton"))
-    //        {
-    //            goedGedaan.Play(0);
+        if (objective1.activeSelf)
+        {
+            ChangeLeftSprite(1);
+            ChangeRightSprite(1);
 
-    //            currentObjective = "Pick up an item";
-    //            ChangeRightSprite(3);
+            if (Input.GetButtonDown("primaryButton"))
+            {
+                objective2.SetActive(true);
+                Destroy(objective1);
+            }
+        }
+        else if (objective2.activeSelf && !objective1)
+        {
+            ChangeLeftSprite(2);
+            ChangeRightSprite(2);  
+
+            if (Input.GetButtonDown("secondaryButton"))
+            {
+                goedGedaan.Play(0);
+
+                objective3.SetActive(true);
+                
                
-    //        }
-    //    }
-    //    else if (currentObjective == "Pick up an item")
-    //    {
-    //        //If the player succesfully picked up an item
-    //        //{   
-    //        //    goedGedaan.Play(0);
-    //        //
-    //        //    currentObjective = "Point and press trigger"
-    //        //    ChangeRightSprite(5);
-    //        //    button.SetActive(true);    
-    //        //}
-    //    }
-    //    else if (currentObjective == "Point and press trigger")
-    //    {
-    //        //If the player succesfully pointed at an object and interacted with it
-    //        //button.SetActive(false);
-    //        //Finish tutorial
-    //        //Object.Destroy(this.gameObject)
-    //    }
-    //}
+            }
+        }
+        else if (objective3.activeSelf)
+        {
+            ChangeRightSprite(3);
+
+            if (tutorialBuis.tag == "TutorialDone")
+            {
+                goedGedaan.Play(0);
+
+                ChangeRightSprite(4);
+            }
+        }
+        else if (objective4.activeSelf)
+        {
+            if (button.tag == "Triggered")
+            {
+                button.SetActive(false);
+                //Finish tutorial
+                //Object.Destroy(this.gameObject)
+            }
+
+        }
+    }
 
     void ChangeLeftSprite(int number)
     {
@@ -78,4 +99,8 @@ public class Tutorial : MonoBehaviour
         rightSpriteRenderer.sprite = imagesRightControllers[number];
     }
    
+    void PressAAndB()
+    {
+
+    }
 }
