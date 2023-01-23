@@ -19,35 +19,35 @@ public class FinalCheck : MonoBehaviour
     private bool correctPHVial = false;
 
 
-    private void OnTriggerStay(Collider other)
-    {
-        if(other.GetComponent<Vial>())
-        {
-            InteractableObject vial = other.GetComponent<InteractableObject>();
-            if(vial.coupledHand.name == "LeftHand Controller")
-            {
-                if(vial.coupledHand.GetComponent<HandController>().leftTriggerPressed == true && oneTimeCheck)
-                {
-                    oneTimeCheck = false;
-                    teleportVial(other.gameObject);
-                }
-            }
+    //private void OnTriggerStay(Collider other)
+    //{
+    //    if(other.GetComponent<Vial>())
+    //    {
+    //        InteractableObject vial = other.GetComponent<InteractableObject>();
+    //        if(vial.coupledHand.name == "LeftHand Controller")
+    //        {
+    //            if(vial.coupledHand.GetComponent<HandController>().leftGripPressed == true && oneTimeCheck)
+    //            {
+    //                oneTimeCheck = false;
+    //                teleportVial(other.gameObject);
+    //            }
+    //        }
 
-            else if(vial.coupledHand.name == "RightHand Controller")
-            {
-                if (vial.coupledHand.GetComponent<HandController>().rightTriggerPressed == true && oneTimeCheck)
-                {
-                    oneTimeCheck = false;
-                    teleportVial(other.gameObject);
-                }
-            }
-        }
+    //        else if(vial.coupledHand.name == "RightHand Controller")
+    //        {
+    //            if (vial.coupledHand.GetComponent<HandController>().rightTriggerPressed == true && oneTimeCheck)
+    //            {
+    //                oneTimeCheck = false;
+    //                teleportVial(other.gameObject);
+    //            }
+    //        }
+    //    }
 
-        else
-        {
-            //play wrong sound
-        }
-    }
+    //    else
+    //    {
+    //        //play wrong sound
+    //    }
+    //}
 
     //teleport vial to stand && deactivate all check bools for grabbing on hand and vial + currently stored obj on player
 

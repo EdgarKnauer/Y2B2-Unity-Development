@@ -1607,6 +1607,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSnapped: 0
+  canCouple: 0
   fluidLevel: 0
   vialLiquid: {fileID: 1827887973}
 --- !u!114 &20571126
@@ -4037,6 +4038,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSnapped: 0
+  canCouple: 0
   fluidLevel: 0
   vialLiquid: {fileID: 183458522}
 --- !u!114 &75616010
@@ -5520,6 +5522,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSnapped: 0
+  canCouple: 0
   fluidLevel: 0
   vialLiquid: {fileID: 1477458305}
 --- !u!114 &87192650
@@ -9709,6 +9712,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSnapped: 0
+  canCouple: 0
   fluidLevel: 0
   vialLiquid: {fileID: 358993146}
 --- !u!114 &218859357
@@ -11330,6 +11334,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSnapped: 0
+  canCouple: 0
   fluidLevel: 0
   vialLiquid: {fileID: 1384450858}
 --- !u!114 &247905332
@@ -13725,6 +13730,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSnapped: 0
+  canCouple: 0
   fluidLevel: 0
   vialLiquid: {fileID: 1074649340}
 --- !u!114 &300793583
@@ -17407,6 +17413,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSnapped: 0
+  canCouple: 0
   fluidLevel: 0
   vialLiquid: {fileID: 246781973}
 --- !u!114 &414408134
@@ -20350,6 +20357,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSnapped: 0
+  canCouple: 0
   fluidLevel: 0
   vialLiquid: {fileID: 355069215}
 --- !u!114 &534444360
@@ -23334,7 +23342,7 @@ GameObject:
   - component: {fileID: 644910526}
   m_Layer: 0
   m_Name: XR Origin (Player)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24901,6 +24909,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSnapped: 0
+  canCouple: 0
   fluidLevel: 0
   vialLiquid: {fileID: 813856325}
 --- !u!114 &748193226
@@ -27964,6 +27973,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSnapped: 0
+  canCouple: 0
   fluidLevel: 0
   vialLiquid: {fileID: 20360742}
 --- !u!114 &881282281
@@ -31816,6 +31826,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSnapped: 0
+  canCouple: 0
   fluidLevel: 0
   vialLiquid: {fileID: 1368412139}
 --- !u!114 &1020004972
@@ -34942,6 +34953,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSnapped: 0
+  canCouple: 0
   fluidLevel: 0
   vialLiquid: {fileID: 1485600446}
 --- !u!114 &1050449077
@@ -36959,6 +36971,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef63b1324cf454048a3765eea21da763, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  leftController: 4
+  rightController: 5
+  leftPrimaryPressed: 0
+  rightPrimaryPressed: 0
+  leftSecondaryPressed: 0
+  rightSecondaryPressed: 0
   leftSpriteRenderer: {fileID: 1982293549}
   rightSpriteRenderer: {fileID: 833588679}
   imagesLeftControllers:
@@ -36973,7 +36991,13 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 98cf004acf52bae4dac870dff5a00ff2, type: 3}
   - {fileID: 21300000, guid: 8cc3ca7120832df4e914fe295d1fc996, type: 3}
   button: {fileID: 1830587546}
+  tutorialBuis: {fileID: 0}
   goedGedaan: {fileID: 0}
+  voordatWeBeginnen: {fileID: 0}
+  allereerstAEnB: {fileID: 0}
+  gripKnop: {fileID: 0}
+  triggerKnop: {fileID: 0}
+  eindeTutorial: {fileID: 0}
 --- !u!4 &1115591376
 Transform:
   m_ObjectHideFlags: 0
@@ -42411,6 +42435,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSnapped: 0
+  canCouple: 0
   fluidLevel: 0
   vialLiquid: {fileID: 130785109}
 --- !u!114 &1406509725
@@ -44453,6 +44478,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSnapped: 0
+  canCouple: 0
   fluidLevel: 0
   vialLiquid: {fileID: 674755434}
 --- !u!114 &1443382683
@@ -46151,6 +46177,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSnapped: 0
+  canCouple: 0
   fluidLevel: 0
   vialLiquid: {fileID: 727090724}
 --- !u!114 &1462792007
@@ -47403,6 +47430,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSnapped: 0
+  canCouple: 0
   fluidLevel: 0
   vialLiquid: {fileID: 1168292274}
 --- !u!114 &1471627789
@@ -50922,6 +50950,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSnapped: 0
+  canCouple: 0
   fluidLevel: 0
   vialLiquid: {fileID: 1006169110}
 --- !u!114 &1558726229
@@ -55129,6 +55158,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSnapped: 0
+  canCouple: 0
   fluidLevel: 0
   vialLiquid: {fileID: 1065578670}
 --- !u!114 &1709200119
@@ -59228,6 +59258,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSnapped: 0
+  canCouple: 0
   fluidLevel: 0
   vialLiquid: {fileID: 1779826993}
 --- !u!135 &1779926935
@@ -60483,6 +60514,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSnapped: 0
+  canCouple: 0
   fluidLevel: 0
   vialLiquid: {fileID: 2077418781}
 --- !u!114 &1860014226
@@ -62541,6 +62573,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSnapped: 0
+  canCouple: 0
   fluidLevel: 0
   vialLiquid: {fileID: 1904405959}
 --- !u!114 &1935534952
@@ -65692,6 +65725,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSnapped: 0
+  canCouple: 0
   fluidLevel: 0
   vialLiquid: {fileID: 2011057218}
 --- !u!23 &2013057666
@@ -66443,6 +66477,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSnapped: 0
+  canCouple: 0
   fluidLevel: 0
   vialLiquid: {fileID: 356221414}
 --- !u!114 &2075445616

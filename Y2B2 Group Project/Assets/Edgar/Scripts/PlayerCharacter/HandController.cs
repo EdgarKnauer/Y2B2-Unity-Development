@@ -9,8 +9,8 @@ public class HandController : MonoBehaviour
     [SerializeField] private XRNode leftController;
     [SerializeField] private XRNode rightController;
 
-    public bool leftTriggerPressed;
-    public bool rightTriggerPressed;
+    public bool leftGrabPressed;
+    public bool rightGrabPressed;
 
     [SerializeField] private GameObject hand;
     private PlayerController playerController;
@@ -36,8 +36,8 @@ public class HandController : MonoBehaviour
         InputDevice leftDevice = InputDevices.GetDeviceAtXRNode(leftController);
         InputDevice rightDevice = InputDevices.GetDeviceAtXRNode(rightController);
 
-        leftDevice.TryGetFeatureValue(CommonUsages.triggerButton, out leftTriggerPressed);
-        rightDevice.TryGetFeatureValue(CommonUsages.triggerButton, out rightTriggerPressed);
+        leftDevice.TryGetFeatureValue(CommonUsages.gripButton, out leftGrabPressed);
+        rightDevice.TryGetFeatureValue(CommonUsages.gripButton, out rightGrabPressed);
     }
 
 
@@ -49,7 +49,7 @@ public class HandController : MonoBehaviour
             {
                 if (!objGrabbedLH)
                 {
-                    if (leftTriggerPressed && hand.name == "LeftHand Controller" && !other.GetComponent<InteractableObject>().isGrabbed)
+                    if (leftGrabPressed && hand.name == "LeftHand Controller" && !other.GetComponent<InteractableObject>().isGrabbed)
                     {
                         objGrabbedLH = true;
                         objLeftHand = other.gameObject;
@@ -68,7 +68,7 @@ public class HandController : MonoBehaviour
 
                 else
                 {
-                    if (!leftTriggerPressed && hand.name == "LeftHand Controller")
+                    if (!leftGrabPressed && hand.name == "LeftHand Controller")
                     {
                         if (objLeftHand != null)
                         {
@@ -86,7 +86,7 @@ public class HandController : MonoBehaviour
 
                 if (!objGrabbedRH)
                 {
-                    if (rightTriggerPressed && hand.name == "RightHand Controller" && !other.GetComponent<InteractableObject>().isGrabbed)
+                    if (rightGrabPressed && hand.name == "RightHand Controller" && !other.GetComponent<InteractableObject>().isGrabbed)
                     {
                         objGrabbedRH = true;
                         objRightHand = other.gameObject;
@@ -99,12 +99,17 @@ public class HandController : MonoBehaviour
                         objRightHand.GetComponent<InteractableObject>().coupledHand = gameObject;
 
                         playerController.grabbedObjRightHand = objRightHand.gameObject;
+
+                        if(other.gameObject.tag == "TutorialObject")
+                        {
+                            other.gameObject.tag = "TutorialDone";
+                        }
                     }
                 }
 
                 else
                 {
-                    if (!rightTriggerPressed && hand.name == "RightHand Controller")
+                    if (!rightGrabPressed && hand.name == "RightHand Controller")
                     {
                         if (objRightHand != null)
                         {
