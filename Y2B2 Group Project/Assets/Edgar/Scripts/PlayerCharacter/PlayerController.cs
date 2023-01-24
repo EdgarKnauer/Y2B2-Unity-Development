@@ -40,8 +40,8 @@ public class PlayerController : MonoBehaviour
     private Vector3 newLocation;
     private float maxPosX1 = -6;
     private float maxPosX2 = 19;
-    private float maxPosY1 = 22.5f;
-    private float maxPosY2 = 48;
+    private float maxPosZ1 = 22.5f;
+    private float maxPosZ2 = 48;
 
     private void Awake()
     {
@@ -131,13 +131,13 @@ public class PlayerController : MonoBehaviour
             newLocation.x = maxPosX2;
         }
 
-        if (newLocation.y < maxPosY1)
+        if (newLocation.z < maxPosZ1)
         {
-            newLocation.y = maxPosY1;
+            newLocation.z = maxPosZ1;
         }
-        else if (newLocation.y > maxPosY2)
+        else if (newLocation.z > maxPosZ2)
         {
-            newLocation.y = maxPosY2;
+            newLocation.z = maxPosZ2;
         }
 
         transform.position = newLocation;
