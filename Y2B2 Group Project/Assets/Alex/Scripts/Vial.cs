@@ -14,18 +14,29 @@ public class Vial : MonoBehaviour
     public float fluidLevel = 0f;
 
     [SerializeField] private GameObject vialLiquid;
+    private MusicManager musicManager;
+
+    [SerializeField] private AudioSource dialogueSource;
+    [SerializeField] private AudioSource soundSource;
+
+
     //If two vials collide
     //check for liquid type
     //If both same type --> no pouring and error sound
     //If one chemical and other BRomBlue, then activate pouring mechanic
     //
 
-    
+
 
     //Pouring mechanic, 
     //First deactivate hand controller scripts with bool
     //Then teleport BB vial to pouring position and start pouring coroutine
     //After pouring is finished, teleport BBlue vial back to original hand position and reactivate hand controller grabbing
+
+    private void Start()
+    {
+        musicManager = FindObjectOfType<MusicManager>();
+    }
 
     public void OnTriggerEnter(Collider other)
     {
@@ -48,6 +59,9 @@ public class Vial : MonoBehaviour
                     if (GetComponent<InteractableObject>().chemicalType == other.GetComponent<InteractableObject>().chemicalType)
                     {
                         //Play "not possible"/ "Error" AS WELL AS "Same Liquid" sound
+                        AudioClip dialogueClip = musicManager.getAudioClip("Dialogue", "SameChemical");
+                        dialogueSource.clip = dialogueClip;
+                        dialogueSource.Play();
                     }
 
                     //BromothymolBlue into any other chemical
@@ -85,9 +99,13 @@ public class Vial : MonoBehaviour
                         StartCoroutine(PouringLiquid(/*other.transform*/));
                     }
 
+                    //Chemical combinations
                     else
                     {
-                        Debug.Log("Unknown chemical combination");
+                        //Error sound
+                        AudioClip dialogueClip = musicManager.getAudioClip("Dialogue", "DangerousMix");
+                        dialogueSource.clip = dialogueClip;
+                        dialogueSource.Play();
                     }
                 }
 
@@ -105,6 +123,9 @@ public class Vial : MonoBehaviour
             else
             {
                 //Play sound "Wrong" as well as "Vial already full or is empty"
+                AudioClip dialogueClip = musicManager.getAudioClip("Dialogue", "MixOnce");
+                dialogueSource.clip = dialogueClip;
+                dialogueSource.Play();
             }
         }
     }
@@ -179,6 +200,7 @@ public class Vial : MonoBehaviour
 
         yield return null;
     }
+
     Transform newParent;
 
     Transform originalVialParent ;

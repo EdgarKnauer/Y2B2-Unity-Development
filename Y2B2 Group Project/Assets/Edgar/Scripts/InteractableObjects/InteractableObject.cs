@@ -15,6 +15,8 @@ public class InteractableObject : MonoBehaviour
     public bool vialIsFull = false;
     public bool vialIsEmpty = false;
 
+    public bool isMixed = false;
+
     [Header("Chemical Combination")]
     public bool BBLueAndH2O = false;
     public bool BBLueAndNaOH = false;

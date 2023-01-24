@@ -145,7 +145,7 @@ public class PlayerController : MonoBehaviour
     private IEnumerator OpeningNavigation()
     {
         openingNavigation = true;
-        AudioClip clip = musicManager.getAudioClip("Dialogue", "NoObject");
+        AudioClip clip = musicManager.getAudioClip("Dialogue", "Navigation");
         NBF.playClip(clip);
         yield return new WaitForSecondsRealtime(clip.length);
         openingNavigation = false;

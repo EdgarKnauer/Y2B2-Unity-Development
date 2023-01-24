@@ -10,8 +10,10 @@ public class GameManager : MonoBehaviour
     private float originalTimeScale;
     public static GameManager instance;
 
-    public AudioClip currentObjective;
+    public string currentTask;
     [SerializeField] private MusicManager MM;
+
+    private int taskIndex = 0;
 
     private void Awake()
     {
@@ -21,6 +23,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         UpdateGameState(GameStates.GamePlay);
+        currentTask = "Task1";
     }
 
     public void UpdateGameState(GameStates newState)
@@ -41,6 +44,17 @@ public class GameManager : MonoBehaviour
         stateSwitched();
     }
 
+    public void NextTask()
+    {
+        taskIndex += 1;
+        switch(taskIndex)
+        {
+            case 1: currentTask = "Task2"; break;
+            case 2: currentTask = "Task3"; break;
+            case 3: currentTask = "Task4"; break;
+            case 4: currentTask = "Task5"; break;           
+        }
+    }
 
     public void onGamePaused()
     {

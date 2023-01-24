@@ -3427,7 +3427,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameState: 0
-  currentObjective: {fileID: 0}
+  currentTask: 
   MM: {fileID: 988407179}
 --- !u!1001 &29725876
 PrefabInstance:
@@ -33587,23 +33587,33 @@ MonoBehaviour:
   - musicName: Greetings
     audioClip: {fileID: 8300000, guid: dc285a327b01cb840b6e53e7a031f183, type: 3}
   - musicName: QuestionTask
-    audioClip: {fileID: 8300000, guid: afc1619248a567c4a853d4bc0d39e952, type: 3}
+    audioClip: {fileID: 8300000, guid: b21b75a6b61a5964bbd57eab2d7f413a, type: 3}
   - musicName: QuestionObject
-    audioClip: {fileID: 8300000, guid: 05bcff367c138c843944d1c1f917ea00, type: 3}
+    audioClip: {fileID: 8300000, guid: 4fbba9d7a1f6c864d8484e636b2f228e, type: 3}
   - musicName: QuestionLooks
-    audioClip: {fileID: 8300000, guid: e66f71a6f128e2845a3e3288791b986e, type: 3}
+    audioClip: {fileID: 8300000, guid: f225097ed8048494a98a925d9069a16e, type: 3}
   - musicName: QuestionDangers
-    audioClip: {fileID: 8300000, guid: 1faac12b9668cdf4087e9a62613365f2, type: 3}
+    audioClip: {fileID: 8300000, guid: 5ab17a7c16e6d2545b5209485aa9bce1, type: 3}
   - musicName: CurrentObjectiveTest
     audioClip: {fileID: 8300000, guid: 4acc2b51e94b0b64daaf34c98d863538, type: 3}
   - musicName: NoObject
-    audioClip: {fileID: 8300000, guid: 7646ffe4df65ec547b865f9d3691c7b1, type: 3}
+    audioClip: {fileID: 8300000, guid: 2a534fe8979a1354ab15b31cadd6da4b, type: 3}
   - musicName: VialObject
     audioClip: {fileID: 8300000, guid: d11b7c5eb72efa04b8f7f39602b3d255, type: 3}
   - musicName: VialLooks
     audioClip: {fileID: 8300000, guid: 1af88703703357348a571f27c63f76c9, type: 3}
-  - musicName: VialDamgers
+  - musicName: VialDangers
     audioClip: {fileID: 8300000, guid: 5b58ec80e85345f4b92c397a6a52b812, type: 3}
+  - musicName: HoldingTwoObjects
+    audioClip: {fileID: 8300000, guid: 214cece5d26304447a3c0eaaa781f679, type: 3}
+  - musicName: Navigation
+    audioClip: {fileID: 8300000, guid: 92b9dbfa2c9bb2d448ce93baba92d3e4, type: 3}
+  - musicName: VialShelf
+    audioClip: {fileID: 8300000, guid: ab35b287873919340b6aa42cd8f124ed, type: 3}
+  - musicName: SafetyGear
+    audioClip: {fileID: 8300000, guid: 67f82437346f4d54187639e0c177f1ce, type: 3}
+  - musicName: Workbench
+    audioClip: {fileID: 8300000, guid: 224cfc13e55b38d4f9deedea32a5c716, type: 3}
 --- !u!1001 &991763862
 PrefabInstance:
   m_ObjectHideFlags: 0

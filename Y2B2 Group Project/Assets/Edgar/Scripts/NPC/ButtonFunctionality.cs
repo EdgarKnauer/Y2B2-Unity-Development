@@ -58,7 +58,7 @@ public class ButtonFunctionality : MonoBehaviour
                 switch (gameObject.name)
                 {
                     case "Task":
-                        currentClip = MM.getAudioClip("Dialogue", "CurrentObjectiveTest");
+                        currentClip = MM.getAudioClip("Dialogue", GM.currentTask);
                         //currentClip = GM.currentObjective;
                         break;
 
@@ -82,7 +82,7 @@ public class ButtonFunctionality : MonoBehaviour
             {
                 if (gameObject.name == "Task")
                 {
-                    currentClip = MM.getAudioClip("Dialogue", "CurrentObjectiveTest");
+                    currentClip = MM.getAudioClip("Dialogue", GM.currentTask);
                     //currentClip = GM.currentObjective;
                 }
                 else
@@ -96,7 +96,7 @@ public class ButtonFunctionality : MonoBehaviour
         else
         {
             //Switch clip to, "You are holding to many objects"
-            currentClip = MM.getAudioClip("Dialogue", "CurrentObjectiveTest");
+            currentClip = MM.getAudioClip("Dialogue", "HoldingTwoObjects");
             playClip(currentClip);
         }        
     }

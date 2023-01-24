@@ -67,15 +67,15 @@ public class NavigationButtonFunctionality : MonoBehaviour
             switch (gameObject.name)
             {
                 case "Workbench":
-                    currentClip = musicManager.getAudioClip("Dialogue", "QuestionTask");
+                    currentClip = musicManager.getAudioClip("Dialogue", "Workbench");
                     break;
 
                 case "VialShelf":
-                    currentClip = musicManager.getAudioClip("Dialogue", "QuestionObject");
+                    currentClip = musicManager.getAudioClip("Dialogue", "VialShelf");
                     break;
 
                 case "SafetyGear":
-                    currentClip = musicManager.getAudioClip("Dialogue", "QuestionLooks");
+                    currentClip = musicManager.getAudioClip("Dialogue", "SafetyGear");
                     break;
             }
 
