@@ -40,12 +40,12 @@ public class Tutorial : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        InputDevice leftDevice = InputDevices.GetDeviceAtXRNode(leftController);
+         InputDevice leftDevice = InputDevices.GetDeviceAtXRNode(leftController);
         InputDevice rightDevice = InputDevices.GetDeviceAtXRNode(rightController);
 
-        leftDevice.TryGetFeatureValue(CommonUsages.primaryButton, out leftPrimaryPressed);
+         leftDevice.TryGetFeatureValue(CommonUsages.primaryButton, out leftPrimaryPressed);
         rightDevice.TryGetFeatureValue(CommonUsages.primaryButton, out rightPrimaryPressed);
-        leftDevice.TryGetFeatureValue(CommonUsages.secondaryButton, out leftSecondaryPressed);
+         leftDevice.TryGetFeatureValue(CommonUsages.secondaryButton, out leftSecondaryPressed);
         rightDevice.TryGetFeatureValue(CommonUsages.secondaryButton, out rightSecondaryPressed);
     }
 
@@ -68,14 +68,14 @@ public class Tutorial : MonoBehaviour
 
     IEnumerator AAndB()
     {
-        ChangeLeftSprite(1);
+        //ChangeLeftSprite(1);
         ChangeRightSprite(1);
 
         allereerstAEnB.Play();
         yield return new WaitWhile(() => allereerstAEnB.isPlaying);
         while (!rightPrimaryPressed && !leftPrimaryPressed)
             yield return null;
-        ChangeLeftSprite(2);
+        //ChangeLeftSprite(2);
         ChangeLeftSprite(2);
         while (!rightSecondaryPressed && !leftSecondaryPressed)
             yield return null;
