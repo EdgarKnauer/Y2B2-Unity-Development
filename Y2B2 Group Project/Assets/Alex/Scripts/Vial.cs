@@ -19,20 +19,6 @@ public class Vial : MonoBehaviour
     [SerializeField] private AudioSource dialogueSource;
     [SerializeField] private AudioSource soundSource;
 
-
-    //If two vials collide
-    //check for liquid type
-    //If both same type --> no pouring and error sound
-    //If one chemical and other BRomBlue, then activate pouring mechanic
-    //
-
-
-
-    //Pouring mechanic, 
-    //First deactivate hand controller scripts with bool
-    //Then teleport BB vial to pouring position and start pouring coroutine
-    //After pouring is finished, teleport BBlue vial back to original hand position and reactivate hand controller grabbing
-
     private void Start()
     {
         musicManager = FindObjectOfType<MusicManager>();
@@ -53,12 +39,13 @@ public class Vial : MonoBehaviour
 
                 InteractableObject interactable = GetComponent<InteractableObject>();
                 if (interactable.coupledHand.name == "RightHand Controller")
-                //Guidlines for when pouring is possible e.g. Bromythol blue not into bromythol blue
+                //Guidlines for when pouring is possible
                 {
                     //Both same liquids
                     if (GetComponent<InteractableObject>().chemicalType == other.GetComponent<InteractableObject>().chemicalType)
                     {
-                        //Play "not possible"/ "Error" AS WELL AS "Same Liquid" sound
+                        //Play error sound
+
                         AudioClip dialogueClip = musicManager.getAudioClip("Dialogue", "SameChemical");
                         dialogueSource.clip = dialogueClip;
                         dialogueSource.Play();
