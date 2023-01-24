@@ -377,7 +377,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameState: 0
-  currentObjective: {fileID: 0}
+  currentTask: 
   MM: {fileID: 988407179}
 --- !u!1001 &29725876
 PrefabInstance:
@@ -2567,11 +2567,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   leftController: 4
   rightController: 5
+  leftGrabPressed: 0
+  rightGrabPressed: 0
   hand: {fileID: 185016753}
   grabbedObjHandTransform: {fileID: 1673765632}
   classroomParentTransform: {fileID: 1274071547}
+  objLeftHand: {fileID: 0}
+  objRightHand: {fileID: 0}
   objGrabbedLH: 0
   objGrabbedRH: 0
+  handModel: {fileID: 0}
+  isPouring: 0
 --- !u!1001 &192081370
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7791,11 +7797,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2ffe17df4eff5b43be244aa680d4122, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
   dialogueObject: VialObject
   dialogueLooks: VialLooks
   dialogueDangers: VialDangers
   isGrabbed: 0
+  coupledHand: {fileID: 0}
+  chemicalType: 
+  PHLevel: 0
+  hasBBlueInIt: 0
+  vialIsFull: 0
+  vialIsEmpty: 0
+  isMixed: 0
+  BBLueAndH2O: 0
+  BBLueAndNaOH: 0
+  BBLueAndHCL: 0
 --- !u!23 &633880919
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8641,7 +8656,7 @@ MonoBehaviour:
   rightHand: {fileID: 2129269517}
   leftController: 4
   rig: {fileID: 644910524}
-  movementSpeed: 1
+  movementSpeed: 2
   checkBool1: 1
 --- !u!114 &644910523
 MonoBehaviour:
@@ -26265,11 +26280,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   leftController: 4
   rightController: 5
+  leftGrabPressed: 0
+  rightGrabPressed: 0
   hand: {fileID: 2129269517}
   grabbedObjHandTransform: {fileID: 448190691}
   classroomParentTransform: {fileID: 1274071547}
+  objLeftHand: {fileID: 0}
+  objRightHand: {fileID: 0}
   objGrabbedLH: 0
   objGrabbedRH: 0
+  handModel: {fileID: 0}
+  isPouring: 0
 --- !u!1 &2134690422
 GameObject:
   m_ObjectHideFlags: 0
@@ -28520,11 +28541,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2ffe17df4eff5b43be244aa680d4122, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
   dialogueObject: VialObject
   dialogueLooks: VialLooks
   dialogueDangers: VialDangers
   isGrabbed: 0
+  coupledHand: {fileID: 0}
+  chemicalType: 
+  PHLevel: 0
+  hasBBlueInIt: 0
+  vialIsFull: 0
+  vialIsEmpty: 0
+  isMixed: 0
+  BBLueAndH2O: 0
+  BBLueAndNaOH: 0
+  BBLueAndHCL: 0
 --- !u!54 &33122732751284420
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -28588,11 +28618,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2ffe17df4eff5b43be244aa680d4122, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
   dialogueObject: VialObject
   dialogueLooks: VialLooks
   dialogueDangers: VialDangers
   isGrabbed: 0
+  coupledHand: {fileID: 0}
+  chemicalType: 
+  PHLevel: 0
+  hasBBlueInIt: 0
+  vialIsFull: 0
+  vialIsEmpty: 0
+  isMixed: 0
+  BBLueAndH2O: 0
+  BBLueAndNaOH: 0
+  BBLueAndHCL: 0
 --- !u!54 &33122732961424259
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -28656,11 +28695,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2ffe17df4eff5b43be244aa680d4122, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
   dialogueObject: VialObject
   dialogueLooks: VialLooks
   dialogueDangers: VialDangers
   isGrabbed: 0
+  coupledHand: {fileID: 0}
+  chemicalType: 
+  PHLevel: 0
+  hasBBlueInIt: 0
+  vialIsFull: 0
+  vialIsEmpty: 0
+  isMixed: 0
+  BBLueAndH2O: 0
+  BBLueAndNaOH: 0
+  BBLueAndHCL: 0
 --- !u!54 &33122733023498403
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -28724,11 +28772,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2ffe17df4eff5b43be244aa680d4122, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
   dialogueObject: VialObject
   dialogueLooks: VialLooks
   dialogueDangers: VialDangers
   isGrabbed: 0
+  coupledHand: {fileID: 0}
+  chemicalType: 
+  PHLevel: 0
+  hasBBlueInIt: 0
+  vialIsFull: 0
+  vialIsEmpty: 0
+  isMixed: 0
+  BBLueAndH2O: 0
+  BBLueAndNaOH: 0
+  BBLueAndHCL: 0
 --- !u!54 &33122733575942199
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -28792,11 +28849,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2ffe17df4eff5b43be244aa680d4122, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
   dialogueObject: VialObject
   dialogueLooks: VialLooks
   dialogueDangers: VialDangers
   isGrabbed: 0
+  coupledHand: {fileID: 0}
+  chemicalType: 
+  PHLevel: 0
+  hasBBlueInIt: 0
+  vialIsFull: 0
+  vialIsEmpty: 0
+  isMixed: 0
+  BBLueAndH2O: 0
+  BBLueAndNaOH: 0
+  BBLueAndHCL: 0
 --- !u!54 &33122733742866999
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -28860,11 +28926,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2ffe17df4eff5b43be244aa680d4122, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
   dialogueObject: VialObject
   dialogueLooks: VialLooks
   dialogueDangers: VialDangers
   isGrabbed: 0
+  coupledHand: {fileID: 0}
+  chemicalType: 
+  PHLevel: 0
+  hasBBlueInIt: 0
+  vialIsFull: 0
+  vialIsEmpty: 0
+  isMixed: 0
+  BBLueAndH2O: 0
+  BBLueAndNaOH: 0
+  BBLueAndHCL: 0
 --- !u!54 &33188926131082662
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -28928,11 +29003,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2ffe17df4eff5b43be244aa680d4122, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
   dialogueObject: VialObject
   dialogueLooks: VialLooks
   dialogueDangers: VialDangers
   isGrabbed: 0
+  coupledHand: {fileID: 0}
+  chemicalType: 
+  PHLevel: 0
+  hasBBlueInIt: 0
+  vialIsFull: 0
+  vialIsEmpty: 0
+  isMixed: 0
+  BBLueAndH2O: 0
+  BBLueAndNaOH: 0
+  BBLueAndHCL: 0
 --- !u!54 &33188926809547965
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -28996,11 +29080,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2ffe17df4eff5b43be244aa680d4122, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
   dialogueObject: VialObject
   dialogueLooks: VialLooks
   dialogueDangers: VialDangers
   isGrabbed: 0
+  coupledHand: {fileID: 0}
+  chemicalType: 
+  PHLevel: 0
+  hasBBlueInIt: 0
+  vialIsFull: 0
+  vialIsEmpty: 0
+  isMixed: 0
+  BBLueAndH2O: 0
+  BBLueAndNaOH: 0
+  BBLueAndHCL: 0
 --- !u!54 &33188927856912298
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -29120,11 +29213,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2ffe17df4eff5b43be244aa680d4122, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
   dialogueObject: VialObject
   dialogueLooks: VialLooks
   dialogueDangers: VialDangers
   isGrabbed: 0
+  coupledHand: {fileID: 0}
+  chemicalType: 
+  PHLevel: 0
+  hasBBlueInIt: 0
+  vialIsFull: 0
+  vialIsEmpty: 0
+  isMixed: 0
+  BBLueAndH2O: 0
+  BBLueAndNaOH: 0
+  BBLueAndHCL: 0
 --- !u!54 &33394970987843229
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -29188,11 +29290,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2ffe17df4eff5b43be244aa680d4122, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
   dialogueObject: VialObject
   dialogueLooks: VialLooks
   dialogueDangers: VialDangers
   isGrabbed: 0
+  coupledHand: {fileID: 0}
+  chemicalType: 
+  PHLevel: 0
+  hasBBlueInIt: 0
+  vialIsFull: 0
+  vialIsEmpty: 0
+  isMixed: 0
+  BBLueAndH2O: 0
+  BBLueAndNaOH: 0
+  BBLueAndHCL: 0
 --- !u!54 &33394972058499772
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -29256,11 +29367,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2ffe17df4eff5b43be244aa680d4122, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
   dialogueObject: VialObject
   dialogueLooks: VialLooks
   dialogueDangers: VialDangers
   isGrabbed: 0
+  coupledHand: {fileID: 0}
+  chemicalType: 
+  PHLevel: 0
+  hasBBlueInIt: 0
+  vialIsFull: 0
+  vialIsEmpty: 0
+  isMixed: 0
+  BBLueAndH2O: 0
+  BBLueAndNaOH: 0
+  BBLueAndHCL: 0
 --- !u!54 &33394972698692341
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -29324,11 +29444,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2ffe17df4eff5b43be244aa680d4122, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
   dialogueObject: VialObject
   dialogueLooks: VialLooks
   dialogueDangers: VialDangers
   isGrabbed: 0
+  coupledHand: {fileID: 0}
+  chemicalType: 
+  PHLevel: 0
+  hasBBlueInIt: 0
+  vialIsFull: 0
+  vialIsEmpty: 0
+  isMixed: 0
+  BBLueAndH2O: 0
+  BBLueAndNaOH: 0
+  BBLueAndHCL: 0
 --- !u!54 &33394972718688070
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -29440,11 +29569,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2ffe17df4eff5b43be244aa680d4122, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
   dialogueObject: VialObject
   dialogueLooks: VialLooks
   dialogueDangers: VialDangers
   isGrabbed: 0
+  coupledHand: {fileID: 0}
+  chemicalType: 
+  PHLevel: 0
+  hasBBlueInIt: 0
+  vialIsFull: 0
+  vialIsEmpty: 0
+  isMixed: 0
+  BBLueAndH2O: 0
+  BBLueAndNaOH: 0
+  BBLueAndHCL: 0
 --- !u!54 &33937437845532029
 Rigidbody:
   m_ObjectHideFlags: 0

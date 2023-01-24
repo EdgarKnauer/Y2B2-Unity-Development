@@ -37,6 +37,12 @@ public class PlayerController : MonoBehaviour
     private bool MBPressed;
     public bool checkBool1;
 
+    private Vector3 newLocation;
+    private float maxPosX1 = -6;
+    private float maxPosX2 = 19;
+    private float maxPosY1 = 22.5f;
+    private float maxPosY2 = 48;
+
     private void Awake()
     {
         gameManager = FindObjectOfType<GameManager>();
@@ -78,7 +84,7 @@ public class PlayerController : MonoBehaviour
                 //{
                 //    gameManager.UpdateGameState(GameManager.GameStates.Navigation);
                 //};
-                if(MBPressed && checkBool1)
+                if(Input.GetKeyDown("space") && checkBool1) //MBPressed
                 {
                     checkBool1 = false;
                     StartCoroutine(OpeningNavigation());
@@ -101,7 +107,7 @@ public class PlayerController : MonoBehaviour
 
                 if (MBPressed && checkBool1)
                 {
-                    checkBool1 = false;
+                    //checkBool1 = false;
                     StartCoroutine(ClosingNavigation());
                     Debug.Log("SwitchedGameStateNavigation");
                     DeActivateLineRenderers(false);
@@ -114,6 +120,27 @@ public class PlayerController : MonoBehaviour
         Vector3 direction = headDirection * new Vector3(inputAxis.x, 0, inputAxis.y);
         rig.transform.Translate(direction * Time.deltaTime * movementSpeed);
 
+        newLocation = transform.position;
+
+        if(newLocation.x < maxPosX1)
+        {
+            newLocation.x = maxPosX1;
+        }
+        else if(newLocation.x > maxPosX2)
+        {
+            newLocation.x = maxPosX2;
+        }
+
+        if (newLocation.y < maxPosY1)
+        {
+            newLocation.y = maxPosY1;
+        }
+        else if (newLocation.y > maxPosY2)
+        {
+            newLocation.y = maxPosY2;
+        }
+
+        transform.position = newLocation;
     }
 
     
@@ -152,12 +179,17 @@ public class PlayerController : MonoBehaviour
         checkBool1 = true;
     }
 
-    private IEnumerator ClosingNavigation()
+    public IEnumerator ClosingNavigation()
     {
         yield return new WaitForSecondsRealtime(1);
         teleporting = false;
         openingNavigation = false;
         checkBool1 = true;
+    }
+
+    public void StartClosingNavigation()
+    {
+        StartCoroutine(ClosingNavigation());
     }
 
     public void DeActivateLineRenderers(bool activate)
@@ -180,4 +212,6 @@ public class PlayerController : MonoBehaviour
 
         //menuButton.Disable();
     }
+
+
 }

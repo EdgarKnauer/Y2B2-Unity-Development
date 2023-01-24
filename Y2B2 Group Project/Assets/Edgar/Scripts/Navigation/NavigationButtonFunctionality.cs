@@ -7,6 +7,8 @@ public class NavigationButtonFunctionality : MonoBehaviour
     [SerializeField] private List<Transform> navigationLocations;
     [SerializeField] private PlayerController player;
 
+    public GameManager gameManager;
+
     [SerializeField] private Camera cam;
 
     [SerializeField] private Canvas playerCanvas;
@@ -14,7 +16,10 @@ public class NavigationButtonFunctionality : MonoBehaviour
 
     public AudioClip currentClip;
 
-
+    private void Start()
+    {
+        gameManager = FindObjectOfType<GameManager>();
+    }
 
     public void OnWorktableButtonClicked()
     {
@@ -52,6 +57,10 @@ public class NavigationButtonFunctionality : MonoBehaviour
         yield return new WaitForSeconds(cam.GetComponent<Unity.XR.PXR.PXR_ScreenFade>().gradientTime);
 
         player.transform.position = teleportLocation.position;
+
+        gameManager.UpdateGameState(GameManager.GameStates.GamePlay);
+        player.StartClosingNavigation();
+
         player.transform.rotation = teleportLocation.rotation;
 
         cam.GetComponent<Unity.XR.PXR.PXR_ScreenFade>().StartScreenFade(1, 0);

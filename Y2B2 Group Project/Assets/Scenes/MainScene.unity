@@ -1591,6 +1591,7 @@ MonoBehaviour:
   hasBBlueInIt: 1
   vialIsFull: 0
   vialIsEmpty: 0
+  isMixed: 0
   BBLueAndH2O: 0
   BBLueAndNaOH: 0
   BBLueAndHCL: 0
@@ -1610,6 +1611,8 @@ MonoBehaviour:
   canCouple: 0
   fluidLevel: 0
   vialLiquid: {fileID: 1827887973}
+  dialogueSource: {fileID: 0}
+  soundSource: {fileID: 0}
 --- !u!114 &20571126
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4041,6 +4044,8 @@ MonoBehaviour:
   canCouple: 0
   fluidLevel: 0
   vialLiquid: {fileID: 183458522}
+  dialogueSource: {fileID: 0}
+  soundSource: {fileID: 0}
 --- !u!114 &75616010
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4063,6 +4068,7 @@ MonoBehaviour:
   hasBBlueInIt: 0
   vialIsFull: 0
   vialIsEmpty: 0
+  isMixed: 0
   BBLueAndH2O: 0
   BBLueAndNaOH: 0
   BBLueAndHCL: 0
@@ -5525,6 +5531,8 @@ MonoBehaviour:
   canCouple: 0
   fluidLevel: 0
   vialLiquid: {fileID: 1477458305}
+  dialogueSource: {fileID: 0}
+  soundSource: {fileID: 0}
 --- !u!114 &87192650
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5547,6 +5555,7 @@ MonoBehaviour:
   hasBBlueInIt: 0
   vialIsFull: 0
   vialIsEmpty: 0
+  isMixed: 0
   BBLueAndH2O: 0
   BBLueAndNaOH: 0
   BBLueAndHCL: 0
@@ -9754,6 +9763,8 @@ MonoBehaviour:
   canCouple: 0
   fluidLevel: 0
   vialLiquid: {fileID: 358993146}
+  dialogueSource: {fileID: 0}
+  soundSource: {fileID: 0}
 --- !u!114 &218859357
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9776,6 +9787,7 @@ MonoBehaviour:
   hasBBlueInIt: 0
   vialIsFull: 0
   vialIsEmpty: 0
+  isMixed: 0
   BBLueAndH2O: 0
   BBLueAndNaOH: 0
   BBLueAndHCL: 0
@@ -11454,6 +11466,7 @@ MonoBehaviour:
   hasBBlueInIt: 1
   vialIsFull: 0
   vialIsEmpty: 0
+  isMixed: 0
   BBLueAndH2O: 0
   BBLueAndNaOH: 0
   BBLueAndHCL: 0
@@ -11473,6 +11486,8 @@ MonoBehaviour:
   canCouple: 0
   fluidLevel: 0
   vialLiquid: {fileID: 1384450858}
+  dialogueSource: {fileID: 0}
+  soundSource: {fileID: 0}
 --- !u!114 &247905332
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13869,6 +13884,8 @@ MonoBehaviour:
   canCouple: 0
   fluidLevel: 0
   vialLiquid: {fileID: 1074649340}
+  dialogueSource: {fileID: 0}
+  soundSource: {fileID: 0}
 --- !u!114 &300793583
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13891,6 +13908,7 @@ MonoBehaviour:
   hasBBlueInIt: 0
   vialIsFull: 0
   vialIsEmpty: 0
+  isMixed: 0
   BBLueAndH2O: 0
   BBLueAndNaOH: 0
   BBLueAndHCL: 0
@@ -15855,6 +15873,7 @@ MonoBehaviour:
   hasBBlueInIt: 1
   vialIsFull: 0
   vialIsEmpty: 0
+  isMixed: 0
   BBLueAndH2O: 0
   BBLueAndNaOH: 0
   BBLueAndHCL: 0
@@ -15874,6 +15893,8 @@ MonoBehaviour:
   canCouple: 0
   fluidLevel: 0
   vialLiquid: {fileID: 1581898875}
+  dialogueSource: {fileID: 0}
+  soundSource: {fileID: 0}
 --- !u!114 &338050040
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18734,12 +18755,11 @@ MonoBehaviour:
   - {fileID: 1820782850}
   - {fileID: 1820782850}
   - {fileID: 1820782850}
-  greenLight: {fileID: 896557668}
-  redLight: {fileID: 999874004}
-  objCoupled: 0
-  tp_coupledObj: {fileID: 0}
-  oneTimeCheck: 0
-  neededPHLevel: 
+  lights: []
+  neededChemComb: 
+  vialCorrect: 0
+  gameFinished: 0
+  soundSource: {fileID: 0}
 --- !u!136 &392650957
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -19426,6 +19446,7 @@ MonoBehaviour:
   hasBBlueInIt: 0
   vialIsFull: 0
   vialIsEmpty: 0
+  isMixed: 0
   BBLueAndH2O: 0
   BBLueAndNaOH: 0
   BBLueAndHCL: 0
@@ -19445,6 +19466,8 @@ MonoBehaviour:
   canCouple: 0
   fluidLevel: 0
   vialLiquid: {fileID: 246781973}
+  dialogueSource: {fileID: 0}
+  soundSource: {fileID: 0}
 --- !u!114 &414408134
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21313,12 +21336,11 @@ MonoBehaviour:
   - {fileID: 1820782850}
   - {fileID: 1820782850}
   - {fileID: 1820782850}
-  greenLight: {fileID: 896557668}
-  redLight: {fileID: 999874004}
-  objCoupled: 0
-  tp_coupledObj: {fileID: 0}
-  oneTimeCheck: 0
-  neededPHLevel: 
+  lights: []
+  neededChemComb: 
+  vialCorrect: 0
+  gameFinished: 0
+  soundSource: {fileID: 0}
 --- !u!136 &423439675
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -22505,6 +22527,7 @@ MonoBehaviour:
   hasBBlueInIt: 1
   vialIsFull: 0
   vialIsEmpty: 0
+  isMixed: 0
   BBLueAndH2O: 0
   BBLueAndNaOH: 0
   BBLueAndHCL: 0
@@ -22524,6 +22547,8 @@ MonoBehaviour:
   canCouple: 0
   fluidLevel: 0
   vialLiquid: {fileID: 355069215}
+  dialogueSource: {fileID: 0}
+  soundSource: {fileID: 0}
 --- !u!114 &534444360
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27281,6 +27306,7 @@ MonoBehaviour:
   hasBBlueInIt: 0
   vialIsFull: 0
   vialIsEmpty: 0
+  isMixed: 0
   BBLueAndH2O: 0
   BBLueAndNaOH: 0
   BBLueAndHCL: 0
@@ -27300,6 +27326,8 @@ MonoBehaviour:
   canCouple: 0
   fluidLevel: 0
   vialLiquid: {fileID: 813856325}
+  dialogueSource: {fileID: 0}
+  soundSource: {fileID: 0}
 --- !u!114 &748193226
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30396,6 +30424,8 @@ MonoBehaviour:
   canCouple: 0
   fluidLevel: 0
   vialLiquid: {fileID: 20360742}
+  dialogueSource: {fileID: 0}
+  soundSource: {fileID: 0}
 --- !u!114 &881282281
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30418,6 +30448,7 @@ MonoBehaviour:
   hasBBlueInIt: 0
   vialIsFull: 0
   vialIsEmpty: 0
+  isMixed: 0
   BBLueAndH2O: 0
   BBLueAndNaOH: 0
   BBLueAndHCL: 0
@@ -32929,6 +32960,7 @@ MonoBehaviour:
   - {fileID: 476839264}
   - {fileID: 745565611}
   player: {fileID: 644910522}
+  gameManager: {fileID: 0}
   cam: {fileID: 1288241677}
   playerCanvas: {fileID: 2115714006}
   musicManager: {fileID: 988407179}
@@ -34346,6 +34378,7 @@ MonoBehaviour:
   hasBBlueInIt: 1
   vialIsFull: 0
   vialIsEmpty: 0
+  isMixed: 0
   BBLueAndH2O: 0
   BBLueAndNaOH: 0
   BBLueAndHCL: 0
@@ -34365,6 +34398,8 @@ MonoBehaviour:
   canCouple: 0
   fluidLevel: 0
   vialLiquid: {fileID: 1368412139}
+  dialogueSource: {fileID: 0}
+  soundSource: {fileID: 0}
 --- !u!114 &1020004972
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37492,6 +37527,8 @@ MonoBehaviour:
   canCouple: 0
   fluidLevel: 0
   vialLiquid: {fileID: 1485600446}
+  dialogueSource: {fileID: 0}
+  soundSource: {fileID: 0}
 --- !u!114 &1050449077
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37514,6 +37551,7 @@ MonoBehaviour:
   hasBBlueInIt: 0
   vialIsFull: 0
   vialIsEmpty: 0
+  isMixed: 0
   BBLueAndH2O: 0
   BBLueAndNaOH: 0
   BBLueAndHCL: 0
@@ -45788,6 +45826,7 @@ MonoBehaviour:
   hasBBlueInIt: 0
   vialIsFull: 0
   vialIsEmpty: 0
+  isMixed: 0
   BBLueAndH2O: 0
   BBLueAndNaOH: 0
   BBLueAndHCL: 0
@@ -45807,6 +45846,8 @@ MonoBehaviour:
   canCouple: 0
   fluidLevel: 0
   vialLiquid: {fileID: 130785109}
+  dialogueSource: {fileID: 0}
+  soundSource: {fileID: 0}
 --- !u!114 &1406509725
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47831,6 +47872,7 @@ MonoBehaviour:
   hasBBlueInIt: 0
   vialIsFull: 0
   vialIsEmpty: 0
+  isMixed: 0
   BBLueAndH2O: 0
   BBLueAndNaOH: 0
   BBLueAndHCL: 0
@@ -47850,6 +47892,8 @@ MonoBehaviour:
   canCouple: 0
   fluidLevel: 0
   vialLiquid: {fileID: 674755434}
+  dialogueSource: {fileID: 0}
+  soundSource: {fileID: 0}
 --- !u!114 &1443382683
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49700,6 +49744,8 @@ MonoBehaviour:
   canCouple: 0
   fluidLevel: 0
   vialLiquid: {fileID: 727090724}
+  dialogueSource: {fileID: 0}
+  soundSource: {fileID: 0}
 --- !u!114 &1462792007
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49722,6 +49768,7 @@ MonoBehaviour:
   hasBBlueInIt: 0
   vialIsFull: 0
   vialIsEmpty: 0
+  isMixed: 0
   BBLueAndH2O: 0
   BBLueAndNaOH: 0
   BBLueAndHCL: 0
@@ -50934,6 +50981,7 @@ MonoBehaviour:
   hasBBlueInIt: 1
   vialIsFull: 0
   vialIsEmpty: 0
+  isMixed: 0
   BBLueAndH2O: 0
   BBLueAndNaOH: 0
   BBLueAndHCL: 0
@@ -50953,6 +51001,8 @@ MonoBehaviour:
   canCouple: 0
   fluidLevel: 0
   vialLiquid: {fileID: 1168292274}
+  dialogueSource: {fileID: 0}
+  soundSource: {fileID: 0}
 --- !u!114 &1471627789
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54454,6 +54504,7 @@ MonoBehaviour:
   hasBBlueInIt: 1
   vialIsFull: 0
   vialIsEmpty: 0
+  isMixed: 0
   BBLueAndH2O: 0
   BBLueAndNaOH: 0
   BBLueAndHCL: 0
@@ -54473,6 +54524,8 @@ MonoBehaviour:
   canCouple: 0
   fluidLevel: 0
   vialLiquid: {fileID: 1006169110}
+  dialogueSource: {fileID: 0}
+  soundSource: {fileID: 0}
 --- !u!114 &1558726229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56784,6 +56837,7 @@ MonoBehaviour:
   - {fileID: 476839264}
   - {fileID: 745565611}
   player: {fileID: 644910522}
+  gameManager: {fileID: 0}
   cam: {fileID: 1288241677}
   playerCanvas: {fileID: 2115714006}
   musicManager: {fileID: 988407179}
@@ -58813,6 +58867,8 @@ MonoBehaviour:
   canCouple: 0
   fluidLevel: 0
   vialLiquid: {fileID: 1065578670}
+  dialogueSource: {fileID: 0}
+  soundSource: {fileID: 0}
 --- !u!114 &1709200119
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58835,6 +58891,7 @@ MonoBehaviour:
   hasBBlueInIt: 0
   vialIsFull: 0
   vialIsEmpty: 0
+  isMixed: 0
   BBLueAndH2O: 0
   BBLueAndNaOH: 0
   BBLueAndHCL: 0
@@ -61293,6 +61350,7 @@ MonoBehaviour:
   - {fileID: 476839264}
   - {fileID: 745565611}
   player: {fileID: 644910522}
+  gameManager: {fileID: 0}
   cam: {fileID: 1288241677}
   playerCanvas: {fileID: 2115714006}
   musicManager: {fileID: 988407179}
@@ -63064,6 +63122,8 @@ MonoBehaviour:
   canCouple: 0
   fluidLevel: 0
   vialLiquid: {fileID: 1779826993}
+  dialogueSource: {fileID: 0}
+  soundSource: {fileID: 0}
 --- !u!135 &1779926935
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -63215,6 +63275,7 @@ MonoBehaviour:
   hasBBlueInIt: 1
   vialIsFull: 0
   vialIsEmpty: 0
+  isMixed: 0
   BBLueAndH2O: 0
   BBLueAndNaOH: 0
   BBLueAndHCL: 0
@@ -63956,12 +64017,11 @@ MonoBehaviour:
   - {fileID: 1820782850}
   - {fileID: 1820782850}
   - {fileID: 1820782850}
-  greenLight: {fileID: 648145439}
-  redLight: {fileID: 961047208}
-  objCoupled: 0
-  tp_coupledObj: {fileID: 0}
-  oneTimeCheck: 0
-  neededPHLevel: 
+  lights: []
+  neededChemComb: 
+  vialCorrect: 0
+  gameFinished: 0
+  soundSource: {fileID: 0}
 --- !u!136 &1820782852
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -64503,6 +64563,8 @@ MonoBehaviour:
   canCouple: 0
   fluidLevel: 0
   vialLiquid: {fileID: 2077418781}
+  dialogueSource: {fileID: 0}
+  soundSource: {fileID: 0}
 --- !u!114 &1860014226
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64525,6 +64587,7 @@ MonoBehaviour:
   hasBBlueInIt: 0
   vialIsFull: 0
   vialIsEmpty: 0
+  isMixed: 0
   BBLueAndH2O: 0
   BBLueAndNaOH: 0
   BBLueAndHCL: 0
@@ -66829,6 +66892,7 @@ MonoBehaviour:
   hasBBlueInIt: 0
   vialIsFull: 0
   vialIsEmpty: 0
+  isMixed: 0
   BBLueAndH2O: 0
   BBLueAndNaOH: 0
   BBLueAndHCL: 0
@@ -66848,6 +66912,8 @@ MonoBehaviour:
   canCouple: 0
   fluidLevel: 0
   vialLiquid: {fileID: 1904405959}
+  dialogueSource: {fileID: 0}
+  soundSource: {fileID: 0}
 --- !u!114 &1935534952
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -70000,6 +70066,8 @@ MonoBehaviour:
   canCouple: 0
   fluidLevel: 0
   vialLiquid: {fileID: 2011057218}
+  dialogueSource: {fileID: 0}
+  soundSource: {fileID: 0}
 --- !u!23 &2013057666
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -70064,6 +70132,7 @@ MonoBehaviour:
   hasBBlueInIt: 0
   vialIsFull: 0
   vialIsEmpty: 0
+  isMixed: 0
   BBLueAndH2O: 0
   BBLueAndNaOH: 0
   BBLueAndHCL: 0
@@ -70932,6 +71001,8 @@ MonoBehaviour:
   canCouple: 0
   fluidLevel: 0
   vialLiquid: {fileID: 356221414}
+  dialogueSource: {fileID: 0}
+  soundSource: {fileID: 0}
 --- !u!114 &2075445616
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -70954,6 +71025,7 @@ MonoBehaviour:
   hasBBlueInIt: 0
   vialIsFull: 0
   vialIsEmpty: 0
+  isMixed: 0
   BBLueAndH2O: 0
   BBLueAndNaOH: 0
   BBLueAndHCL: 0
@@ -72702,6 +72774,37 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2103056015}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2106726649
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2106726650}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2106726650
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2106726649}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.93, y: -0.57, z: 46.51}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2108864225
 PrefabInstance:
   m_ObjectHideFlags: 0
