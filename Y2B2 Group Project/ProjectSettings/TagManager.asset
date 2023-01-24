@@ -7,6 +7,7 @@ TagManager:
   - Triggered
   - TutorialObject
   - TutorialDone
+  - ShakingFlask
   layers:
   - Default
   - TransparentFX

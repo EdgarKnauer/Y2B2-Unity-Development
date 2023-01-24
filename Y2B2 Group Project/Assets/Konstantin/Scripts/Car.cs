@@ -13,6 +13,8 @@ public class Car : MonoBehaviour
     private Transform player;
 
     public BoxCollider areaCollider;
+    public BoxCollider areaCollider2;
+
 
     void Start()
     {
@@ -30,7 +32,7 @@ public class Car : MonoBehaviour
 
         float distance = Vector3.Distance(currentObject.transform.position, player.position);
         audioSource.volume = 1 - (distance / 30);
-        if (areaCollider.bounds.Contains(player.position))
+        if (areaCollider.bounds.Contains(player.position) || areaCollider2.bounds.Contains(player.position))
         {
             if (!audioSource.isPlaying)
             {

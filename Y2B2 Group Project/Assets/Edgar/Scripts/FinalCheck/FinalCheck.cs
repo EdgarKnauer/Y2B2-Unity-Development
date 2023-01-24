@@ -98,7 +98,7 @@ public class FinalCheck : MonoBehaviour
             )
         {
             gameFinished = true;
-            //play finished sound from sound source
+            //play finished sound from ONE sound source
             //Start confetty effects particle system on every vial stand
             //Gamestate = finished;
         }  
